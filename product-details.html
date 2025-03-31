@@ -18,15 +18,57 @@
         </nav>
     </header>
     
-    <section>
-        <h1>商品1 詳細介紹</h1>
-        <img src="product1.jpg" alt="商品1">
-        <p>這裡是商品的詳細描述。</p>
+    <section id="product-detail">
+        <!-- 預設的商品名稱和描述，這些會被 JavaScript 變動 -->
+        <h1 id="product-name">商品名稱</h1>
+        <img id="product-image" src="" alt="商品圖片">
+        <p id="product-description">商品詳細描述</p>
         <a href="products.html">返回商品列表</a>
     </section>
 
     <footer>
         <p>&copy; 2025 我的商店</p>
     </footer>
+
+    <script>
+        // 取得 URL 中的商品 ID
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id'); // 例如: product-details.html?id=1
+
+        // 假設你有一個商品資料庫（這裡使用一個簡單的範例）
+        const products = [
+            {
+                id: 1,
+                name: "商品1",
+                description: "這是商品1的詳細描述，包含更多資訊。",
+                image: "product1.jpg"
+            },
+            {
+                id: 2,
+                name: "商品2",
+                description: "這是商品2的詳細描述，包含更多資訊。",
+                image: "product2.jpg"
+            },
+            {
+                id: 3,
+                name: "商品3",
+                description: "這是商品3的詳細描述，包含更多資訊。",
+                image: "product3.jpg"
+            }
+        ];
+
+        // 找到匹配的商品資料
+        const product = products.find(p => p.id == productId);
+
+        // 如果找到商品，將資料填入頁面
+        if (product) {
+            document.getElementById('product-name').textContent = product.name;
+            document.getElementById('product-image').src = product.image;
+            document.getElementById('product-description').textContent = product.description;
+        } else {
+            document.getElementById('product-name').textContent = "商品未找到";
+            document.getElementById('product-description').textContent = "該商品資料無法顯示。";
+        }
+    </script>
 </body>
 </html>

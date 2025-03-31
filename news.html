@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的商店</title>
+    <title>最新消息</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -26,12 +26,27 @@
     </header>
     
     <section>
-        <h1> </h1>
-        <p> </p>
+        <h1>最新消息</h1>
+        <div id="news-container">
+            <!-- 這裡會展示文章列表 -->
+        </div>
     </section>
 
     <footer>
         <p>&copy; 2025 我的商店</p>
     </footer>
+
+    <!-- Decap CMS 容器 -->
+    <div id="cms-container"></div>
+
+    <!-- 加載 Decap CMS JS 並初始化 -->
+    <script src="https://cdn.jsdelivr.net/npm/decap-cms@3.0.0/dist/decap-cms.js"></script>
+    <script>
+      window.addEventListener('load', function () {
+        CMS.init({
+          container: '#cms-container', // 使用我們添加的容器
+        });
+      });
+    </script>
 </body>
 </html>

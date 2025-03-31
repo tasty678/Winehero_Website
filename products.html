@@ -27,33 +27,55 @@
     
     <section>
         <h1>商品列表</h1>
-        <div class="product-grid">
-            <div class="product">
-                <img src="product1.jpg" alt="商品1">
-                <h3>商品1</h3>
-                <p>商品1的簡單描述</p>
-                <a href="product-details.html?id=1">查看詳情</a>
-            </div>
-            <div class="product">
-                <img src="product2.jpg" alt="商品2">
-                <h3>商品2</h3>
-                <p>商品2的簡單描述</p>
-                <a href="product-details.html?id=2">查看詳情</a>
-            </div>
-            <div class="product">
-                <img src="product3.jpg" alt="商品3">
-                <h3>商品3</h3>
-                <p>商品3的簡單描述</p>
-                <a href="product-details.html?id=3">查看詳情</a>
-            </div>
+        <div class="product-grid" id="product-list">
+            <!-- 商品列表將在這裡動態渲染 -->
         </div>
     </section>
 
     <footer>
         <p>&copy; 2025 我的商店</p>
     </footer>
-    
-    <script src="script.js"></script>
-    
+
+    <script>
+        // 假設你的商品資料儲存在 Decap CMS，這是一個範例如何動態顯示
+        const products = [
+            {
+                name: "威士忌 A",
+                description: "這是威士忌 A 的描述。",
+                price: "NT$ 1000",
+                image: "whiskey1.jpg",
+                category: "whiskey"
+            },
+            {
+                name: "葡萄酒 B",
+                description: "這是葡萄酒 B 的描述。",
+                price: "NT$ 1200",
+                image: "wine1.jpg",
+                category: "wine"
+            },
+            {
+                name: "啤酒 C",
+                description: "這是啤酒 C 的描述。",
+                price: "NT$ 500",
+                image: "beer1.jpg",
+                category: "beer"
+            }
+        ];
+
+        const productList = document.getElementById("product-list");
+
+        products.forEach(product => {
+            const productElement = document.createElement("div");
+            productElement.classList.add("product");
+            productElement.innerHTML = `
+                <img src="${product.image}" alt="${product.name}">
+                <h3>${product.name}</h3>
+                <p>${product.description}</p>
+                <p>價格: ${product.price}</p>
+                <a href="product-details.html?id=${product.name}">查看詳情</a>
+            `;
+            productList.appendChild(productElement);
+        });
+    </script>
 </body>
 </html>
