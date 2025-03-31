@@ -1,0 +1,47 @@
+backend:
+  name: github
+  repo: tasty678/Winehero_Website  # 你的 GitHub 倉庫名稱
+  branch: main  # 你的主要分支
+
+media_folder: "static/img"  # 上傳的圖片存放位置
+public_folder: "/img"       # 圖片在網頁上的公開路徑
+
+collections:
+  - name: "products"
+    label: "商品"
+    folder: "content/products"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "名稱", name: "name", widget: "string" }
+      - { label: "描述", name: "description", widget: "text" }
+      - { label: "價格", name: "price", widget: "number" }
+      - { label: "圖片", name: "image", widget: "image" }
+      
+  - name: "news"  # 這是你的文章集合名稱，可以自定義
+    label: "最新消息"  # 顯示在 CMS 的名稱
+    folder: "content/news"  # 文章存放的資料夾
+    create: true  # 允許在 CMS 中創建新的文章
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"  # 文章的 URL 結構
+    fields:
+      - { label: "標題", name: "title", widget: "string" }
+      - { label: "發布日期", name: "date", widget: "datetime" }
+      - { label: "內容", name: "body", widget: "markdown" }
+      - { label: "圖片", name: "image", widget: "image" }
+      - { label: "文章簡介", name: "excerpt", widget: "text" }
+
+
+  - name: "products"  # 商品資料集合
+    label: "商品"  # 顯示在 CMS 的名稱
+    folder: "content/products"  # 商品存放的資料夾
+    create: true  # 允許在 CMS 中創建新的商品
+    slug: "{{slug}}"  # 商品的 URL 結構
+    fields:
+      - { label: "名稱", name: "name", widget: "string" }
+      - { label: "描述", name: "description", widget: "text" }
+      - { label: "價格", name: "price", widget: "number" }
+      - { label: "圖片", name: "image", widget: "image" }
+      - { label: "類別", name: "category", widget: "select", options: ["紅酒", "白酒", "香檳","啤酒","威士忌","白蘭地","VSOP"] }
+      - { label: "酒精濃度", name: "alcohol_content", widget: "number" }
+      - { label: "產地", name: "origin", widget: "string" }
+
