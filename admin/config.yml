@@ -13,3 +13,6 @@ collections:
       - { label: "Description", name: "description", widget: "text" }
       - { label: "Price", name: "price", widget: "number" }
       - { label: "Image", name: "image", widget: "image" }
+
+    media_folder: "static/img"  # 上傳圖片的資料夾
+    public_folder: "/img"      # 圖片在網頁上的公開路徑
