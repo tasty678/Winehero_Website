@@ -3,8 +3,8 @@ backend:
   repo: tasty678/Winehero_Website  # 你的 GitHub 倉庫名稱
   branch: main  # 你的主要分支
 
-media_folder: "images/uploads"  # 上傳的圖片存放位置
-public_folder: "/images/uploads"
+media_folder: "static/img"  # 上傳的圖片存放位置
+public_folder: "/img"       # 圖片在網頁上的公開路徑
 
 collections:
   - name: "products"
@@ -17,8 +17,3 @@ collections:
       - { label: "描述", name: "description", widget: "text" }
       - { label: "價格", name: "price", widget: "number" }
       - { label: "圖片", name: "image", widget: "image" }
-
-
-
-    media_folder: "static/img"  # 上傳圖片的資料夾
-    public_folder: "/img"      # 圖片在網頁上的公開路徑
