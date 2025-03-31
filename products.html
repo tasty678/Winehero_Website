@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品列表</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">首頁</a></li>
+                <li class="dropdown">
+                    <a href="#">商品</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="products.html?category=whiskey">威士忌</a></li>
+                        <li><a href="products.html?category=wine">葡萄酒</a></li>
+                        <li><a href="products.html?category=beer">啤酒</a></li>
+                    </ul>
+                </li>
+                <li><a href="news.html">最新消息</a></li>
+                <li><a href="contact.html">聯絡我們</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section>
+        <h1>商品列表</h1>
+        <div class="product-grid">
+            <div class="product">
+                <img src="product1.jpg" alt="商品1">
+                <h3>商品1</h3>
+                <p>商品1的簡單描述</p>
+                <a href="product-details.html?id=1">查看詳情</a>
+            </div>
+            <div class="product">
+                <img src="product2.jpg" alt="商品2">
+                <h3>商品2</h3>
+                <p>商品2的簡單描述</p>
+                <a href="product-details.html?id=2">查看詳情</a>
+            </div>
+            <div class="product">
+                <img src="product3.jpg" alt="商品3">
+                <h3>商品3</h3>
+                <p>商品3的簡單描述</p>
+                <a href="product-details.html?id=3">查看詳情</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 我的商店</p>
+    </footer>
+    
+    <script src="script.js"></script>
+    
+</body>
+</html>
