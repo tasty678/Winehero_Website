@@ -2,11 +2,13 @@
 <html>
 <head>
   <title>Decap CMS</title>
-  <script src="https://unpkg.com/decap-cms@latest/dist/decap-cms.js"></script>
 </head>
 <body>
+  <script src="https://unpkg.com/decap-cms@latest/dist/decap-cms.js"></script>
   <script>
-    CMS.init();
+    window.onload = function() {
+      CMS.init();
+    };
   </script>
 </body>
 </html>
