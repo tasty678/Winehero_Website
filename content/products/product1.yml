@@ -1,0 +1,7 @@
+name: "商品1"
+description: "這是商品1的描述"
+price: 1000
+image: "product1.jpg"
+category: "紅酒"
+alcohol_content: 12
+origin: "法國"
