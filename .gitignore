@@ -1,0 +1,9 @@
+# 忽略 node_modules（如果有）
+node_modules/
+
+# 忽略 IDE 設定檔（例如 VSCode）
+.vscode/
+
+# 不忽略 static 資料夾
+!static/
+
