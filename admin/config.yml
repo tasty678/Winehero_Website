@@ -2,6 +2,7 @@ backend:
   name: github
   repo: tasty678/Winehero_Website
   branch: main
+  auth_scope: repo
 
 
 media_folder: "static/images/uploads"  # 上傳的圖片存放位置

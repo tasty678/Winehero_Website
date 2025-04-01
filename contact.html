@@ -9,21 +9,33 @@
 <body>
     <header>
         <nav>
-            <ul class="menu">
-                <li><a href="index.html">首頁</a></li>
-                <li class="dropdown">
-                    <a href="#">商品</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="products.html?category=whiskey">威士忌</a></li>
-                        <li><a href="products.html?category=wine">葡萄酒</a></li>
-                        <li><a href="products.html?category=beer">啤酒</a></li>
-                    </ul>
-                </li>
-                <li><a href="news.html">最新消息</a></li>
-                <li><a href="contact.html">聯絡我們</a></li>
-            </ul>
+          <ul class="menu">
+            <li><a href="index.html">首頁</a></li>
+            <li><a href="hb_intro.html">HB 介紹</a></li>
+            <li><a href="hb_location.html">HB 通路</a></li>
+            <li class="dropdown">
+              <a href="#">商品</a>
+              <ul class="dropdown-menu">
+                <li><a href="products.html?category=whiskey">威士忌</a></li>
+                <li><a href="products.html?category=beer">啤酒</a></li>
+                <li><a href="products.html?category=sorghum">高粱</a></li>
+                <li><a href="products.html?category=wine">葡萄酒</a></li>
+                <li><a href="products.html?category=vodka">伏特加</a></li>
+                <li><a href="products.html?category=rum">朗姆酒</a></li>
+                <li><a href="products.html?category=gin">琴酒</a></li>
+                <li><a href="products.html?category=tequila">龍舌蘭</a></li>
+                <li><a href="products.html?category=brandy">白蘭地</a></li>
+                <li><a href="products.html?category=champagne">香檳</a></li>
+                <li><a href="products.html?category=liqueur">利口酒</a></li>
+                <li><a href="products.html?category=blanc">白酒</a></li>
+  
+              </ul>
+            </li>
+            <li><a href="news.html">最新消息</a></li>
+            <li><a href="contact.html">聯絡我們</a></li>
+          </ul>
         </nav>
-    </header>
+      </header>
     
     <section>
         <h1>聯絡我們</h1>
@@ -35,17 +47,5 @@
         <p>&copy; 2025 我的商店</p>
     </footer>
 
-    <!-- Decap CMS 容器 -->
-    <div id="cms-container"></div>
-
-    <!-- 加載 Decap CMS JS 並初始化 -->
-    <script src="https://cdn.jsdelivr.net/npm/decap-cms@3.0.0/dist/decap-cms.js"></script>
-    <script>
-      window.addEventListener('load', function () {
-        CMS.init({
-          container: '#cms-container', // 使用我們添加的容器
-        });
-      });
-    </script>
 </body>
 </html>

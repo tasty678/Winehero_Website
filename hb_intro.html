@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products Page</title>
+    <link rel="stylesheet" href="styles.css">
+
+    
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .product {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 300px;
+            margin: 10px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .product h3 {
+            margin: 10px 0;
+        }
+        .product p {
+            color: #555;
+        }
+        .product button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .product button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+          <ul class="menu">
+            <li><a href="index.html">首頁</a></li>
+            <li><a href="hb_intro.html">HB 介紹</a></li>
+            <li><a href="hb_location.html">HB 通路</a></li>
+            <li class="dropdown">
+              <a href="#">商品</a>
+              <ul class="dropdown-menu">
+                <li><a href="products.html?category=whiskey">威士忌</a></li>
+                <li><a href="products.html?category=beer">啤酒</a></li>
+                <li><a href="products.html?category=sorghum">高粱</a></li>
+                <li><a href="products.html?category=wine">葡萄酒</a></li>
+                <li><a href="products.html?category=vodka">伏特加</a></li>
+                <li><a href="products.html?category=rum">朗姆酒</a></li>
+                <li><a href="products.html?category=gin">琴酒</a></li>
+                <li><a href="products.html?category=tequila">龍舌蘭</a></li>
+                <li><a href="products.html?category=brandy">白蘭地</a></li>
+                <li><a href="products.html?category=champagne">香檳</a></li>
+                <li><a href="products.html?category=liqueur">利口酒</a></li>
+                <li><a href="products.html?category=blanc">白酒</a></li>
+  
+              </ul>
+            </li>
+            <li><a href="news.html">最新消息</a></li>
+            <li><a href="contact.html">聯絡我們</a></li>
+          </ul>
+        </nav>
+      </header>
+      
+    <h1 style="text-align: center; padding: 20px;">Our Products</h1>
+    <div class="container">
+        <div class="product">
+            <img src="product1.jpg" alt="Product 1">
+            <h3>Product 1</h3>
+            <p>Short description of Product 1.</p>
+            <button>Buy Now</button>
+        </div>
+        <div class="product">
+            <img src="product2.jpg" alt="Product 2">
+            <h3>Product 2</h3>
+            <p>Short description of Product 2.</p>
+            <button>Buy Now</button>
+        </div>
+        <div class="product">
+            <img src="product3.jpg" alt="Product 3">
+            <h3>Product 3</h3>
+            <p>Short description of Product 3.</p>
+            <button>Buy Now</button>
+        </div>
+        <div class="product">
+            <img src="product4.jpg" alt="Product 4">
+            <h3>Product 4</h3>
+            <p>Short description of Product 4.</p>
+            <button>Buy Now</button>
+        </div>
+        <div class="product">
+            <img src="product5.jpg" alt="Product 5">
+            <h3>Product 5</h3>
+            <p>Short description of Product 5.</p>
+            <button>Buy Now</button>
+        </div>
+    </div>
+</body>
+</html>
