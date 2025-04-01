@@ -37,45 +37,9 @@
     </footer>
 
     <script>
-        // 假設你的商品資料儲存在 Decap CMS，這是一個範例如何動態顯示
-        const products = [
-            {
-                name: "威士忌 A",
-                description: "這是威士忌 A 的描述。",
-                price: "NT$ 1000",
-                image: "whiskey1.jpg",
-                category: "whiskey"
-            },
-            {
-                name: "葡萄酒 B",
-                description: "這是葡萄酒 B 的描述。",
-                price: "NT$ 1200",
-                image: "wine1.jpg",
-                category: "wine"
-            },
-            {
-                name: "啤酒 C",
-                description: "這是啤酒 C 的描述。",
-                price: "NT$ 500",
-                image: "beer1.jpg",
-                category: "beer"
-            }
-        ];
+        <h1>商品</h1>
 
-        const productList = document.getElementById("product-list");
-
-        products.forEach(product => {
-            const productElement = document.createElement("div");
-            productElement.classList.add("product");
-            productElement.innerHTML = `
-                <img src="${product.image}" alt="${product.name}">
-                <h3>${product.name}</h3>
-                <p>${product.description}</p>
-                <p>價格: ${product.price}</p>
-                <a href="product-details.html?id=${product.name}">查看詳情</a>
-            `;
-            productList.appendChild(productElement);
-        });
+        
     </script>
 </body>
 </html>
