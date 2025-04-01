@@ -1,10 +1,8 @@
 backend:
-  name: git-gateway
+  name: github
   repo: tasty678/Winehero_Website
   branch: main
-  slug:
-    encoding: "ascii"
-    clean_accents: true
+
 
 media_folder: "static/images/uploads"  # 上傳的圖片存放位置
 public_folder: "/images/uploads"       # 圖片在網頁上的公開路徑
