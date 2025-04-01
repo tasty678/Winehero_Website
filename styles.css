@@ -19,6 +19,16 @@ body {
       word-wrap: normal /* Allow text to wrap */
       }
   }
+  .logo-container {
+    display: flex;
+    justify-content: center; /* 水平置中 */
+    align-items: center; /* 垂直置中（如果有高度限制） */
+    height: 100px; /* 可以自行調整高度 */
+  }
+  .logo {
+    width: 200px; /* 調整寬度，可以自行調整 */
+    height: auto; /* 保持圖片比例 */
+  }
   nav {
     display: flex;
     justify-content: center;
