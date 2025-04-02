@@ -146,23 +146,17 @@ body {
     margin-right: 120px;
   }
   
-  /* 未成年標語 */
   .age-warning {
-  display: flex;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: black;
-  color: white;
-  text-align: center;
-  padding: 10px;
-  font-size: 50px;
-  z-index: 1000; /* 確保它顯示在最上層 */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: black;
+    text-align: center;
+    z-index: 1000; /* 確保它顯示在最上層 */
   }
-
-  .warning-image {
-    height: 70px; /* Adjust the size of the image */
-    margin-right: 20px; /* Add spacing between the image and text */
-    margin-left:  180px; /* Add spacing between the image and text */
+  
+  .age-warning-banner {
+    width: 100%; /* 圖片寬度自適應 */
+    height: auto; /* 保持圖片比例 */
   }
