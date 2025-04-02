@@ -5,7 +5,7 @@ body {
     padding: 0;
     background-color: #f8f8f8;
     color: #333;
-    padding-bottom: 50px; /* 讓頁面內容不會被標語遮住 */
+    padding-bottom: 70px; /* 讓頁面內容不會被標語遮住 */
     position: relative; /* 確保內容區域可以正確定位 */
     min-height: 100vh; /* 讓頁面高度至少等於視窗高度 */
     box-sizing: border-box;
@@ -73,6 +73,7 @@ body {
     padding: 10px 0;
     min-width: 150px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* 確保下拉選單在最上層 */
   }
   .dropdown-menu li {
     padding: 5px 15px;
@@ -176,10 +177,48 @@ body {
     text-align: center;
     z-index: 1000; /* 確保它顯示在最上層 */
     padding: 10px 0;
-    height: 50px;
+    height: 70px;
   }
   
   .age-warning-banner {
     width: 100%; /* 圖片寬度自適應 */
     height: auto; /* 保持圖片比例 */
   }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+.product {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 300px;
+    margin: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.product img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+.product h3 {
+    margin: 10px 0;
+}
+.product p {
+    color: #555;
+}
+.product button {
+    background-color: #4a76a1;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.product button:hover {
+    background-color: #4a76a1;
+}
