@@ -6,6 +6,9 @@ body {
     background-color: #f8f8f8;
     color: #333;
     padding-bottom: 50px; /* 讓頁面內容不會被標語遮住 */
+    position: relative; /* 確保內容區域可以正確定位 */
+    min-height: 100vh; /* 讓頁面高度至少等於視窗高度 */
+    box-sizing: border-box;
   }
   .logo {
     width: 200px; /* 調整寬度，可以自行調整 */
@@ -103,31 +106,35 @@ body {
     color: white;
     text-align: center;
     padding: 10px 0;
-    margin-top: 20px;
-    margin-bottom: 50px; /* 預留空間讓 footer 露出來 */
+    position: relative; /* 保持 footer 在正常文檔流中 */
+    z-index: 10; /* 確保 footer 在 age-warning 上方 */
   }
+  
 
   .footer-container {
     display: flex;
     justify-content: space-between; /* Align content to the left */
     align-items: center; /* Center vertically */
-    padding: 20px;
+    padding: 10px;
     background-color: #4a76a1; /* Optional: Light background color */
+    flex-wrap: wrap;
   } 
   
   /* Company info section */
   .company-info {
-    font-size: 18px;
+    font-size: 1.0rem;
     color: white;
-    line-height: 1.5;
+    line-height: 1.1;
     text-align: left;
-    margin-left: 150px;
+    flex: 1;
+    min-width: 200px;
+    margin-left: 40px;
   }
   
   .company-info hr {
     border: none;
-    border-top: 1px solid #ccc;
-    margin: 10px 0;
+    border-top: 0.1em solid #ccc;
+    margin: 1em 0;
   }
   
   /* Google Map logo */
@@ -139,11 +146,25 @@ body {
   }
 
   .copyright {
-    font-size: 14px;
+    font-size: 1rem;
     color: white;
     text-align: right;
-    max-width: 30%; /* Adjust width to fit nicely */
-    margin-right: 120px;
+    flex: 1;
+    min-width: 200px;
+    margin-right: 40px;
+  }
+
+  @media (max-width: 600px) {
+    .footer-container {
+      flex-direction: column; /* 小螢幕時改為垂直排列 */
+      text-align: center; /* 文字置中 */
+    }
+  
+    .company-info,
+    .copyright {
+      text-align: center; /* 小螢幕時文字置中 */
+      margin-bottom: 10px; /* 增加間距 */
+    }
   }
   
   .age-warning {
@@ -154,6 +175,8 @@ body {
     background: black;
     text-align: center;
     z-index: 1000; /* 確保它顯示在最上層 */
+    padding: 10px 0;
+    height: 50px;
   }
   
   .age-warning-banner {
