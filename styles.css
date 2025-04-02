@@ -1,9 +1,14 @@
 /* 全域樣式 */
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f8f8f8;
+    background-color: #fbf7f3;
     color: #333;
     padding-bottom: 70px; /* 讓頁面內容不會被標語遮住 */
     position: relative; /* 確保內容區域可以正確定位 */
@@ -13,6 +18,7 @@ body {
   .logo {
     width: 200px; /* 調整寬度，可以自行調整 */
     height: auto; /* 保持圖片比例 */
+    margin-top: 10px;
   }
 
   .logo-container {
@@ -20,13 +26,13 @@ body {
     justify-content: center; /* 水平置中 */
     align-items: center; /* 垂直置中（如果有高度限制） */
     height: 100px; /* 可以自行調整高度 */
-    background-color: #4a76a1;
+    background-color: #476078;
+    margin-top: 0px; /* 調整上方間距 */
   }
 
   /* 導航列 */
   header {
-    background-color: #4a76a1;
-    padding: 15px 0;
+    background-color: #384a5b;
   }
   /* Responsive styling for smaller screens */
   @media (max-width: 600px) {
@@ -40,21 +46,27 @@ body {
   nav {
     display: flex;
     justify-content: center;
+    align-items: center; /* 垂直置中（如果有高度限制） */
+    height: 40px;   
   }
   .menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center; /* 垂直置中（如果有高度限制） */
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex;
-    gap: 20px;
+    width: 80%;
   }
   .menu li {
     position: relative;
+    flex: 1; /* 每個選項佔據相同的空間 */
+    text-align: center; /* 文字置中 */
   }
   .menu a {
     text-decoration: none;
     color: white;
-    padding: 10px 15px;
+    padding: 5px 15px;
     transition: 0.3s;
   }
   .menu a:hover {
@@ -70,10 +82,11 @@ body {
     left: 0;
     background-color: white;
     list-style: none;
-    padding: 10px 0;
+    padding: 15px 0;
     min-width: 150px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 1000; /* 確保下拉選單在最上層 */
+    border-radius: 3px;
   }
   .dropdown-menu li {
     padding: 5px 15px;
@@ -103,7 +116,7 @@ body {
   
   /* 頁尾 */
   footer {
-    background-color: #4a76a1;
+    background-color: #476078;
     color: white;
     text-align: center;
     padding: 10px 0;
@@ -117,7 +130,7 @@ body {
     justify-content: space-between; /* Align content to the left */
     align-items: center; /* Center vertically */
     padding: 10px;
-    background-color: #4a76a1; /* Optional: Light background color */
+    background-color: #476078; /* Optional: Light background color */
     flex-wrap: wrap;
   } 
   
