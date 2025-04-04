@@ -24,64 +24,33 @@ window.addEventListener("scroll", () => {
   }
 });
 
-
-const track = document.querySelector(".carousel-track");
-const slides = Array.from(track.children);
-const leftArrow = document.querySelector(".left-arrow");
-const rightArrow = document.querySelector(".right-arrow");
-
-let currentSlideIndex = 0;
-
-// 計算每個產品的寬度
-function updateSlideWidth() {
-  const slideWidth = slides[0].getBoundingClientRect().width;
-  slides.forEach((slide, index) => {
-    slide.style.left = slideWidth * index + "px";
-  });
-  return slideWidth;
-}
-
-let slideWidth = updateSlideWidth();
-
-// 計算每次滑動的產品數量
-function getVisibleSlides() {
-  const viewportWidth = window.innerWidth;
-  return viewportWidth <= 768 ? 2 : 3; // 小螢幕顯示 2 個，大螢幕顯示 3 個
-}
-
-// 監聽視窗大小變化，重新計算寬度
-window.addEventListener("resize", () => {
-  slideWidth = updateSlideWidth();
-});
-
-// 向右滑動
-rightArrow.addEventListener("click", () => {
-  const visibleSlides = getVisibleSlides();
-  if (currentSlideIndex < slides.length - visibleSlides) {
-    currentSlideIndex++;
-    track.style.transform = `translateX(-${slideWidth * currentSlideIndex}px)`;
-  }
-});
-
-// 向左滑動
-leftArrow.addEventListener("click", () => {
-  if (currentSlideIndex > 0) {
-    currentSlideIndex--;
-    track.style.transform = `translateX(-${slideWidth * currentSlideIndex}px)`;
-  }
-});
-
-rightArrow.addEventListener("click", () => {
-  const visibleSlides = getVisibleSlides();
-  if (currentSlideIndex < slides.length - visibleSlides) {
-    currentSlideIndex++;
-    track.style.transform = `translateX(-${slideWidth * currentSlideIndex}px)`;
-  } else {
-    // 如果是最後一個產品，確保它完全顯示
-    const remainingSlides = slides.length - currentSlideIndex - visibleSlides;
-    if (remainingSlides > 0) {
-      currentSlideIndex += remainingSlides;
-      track.style.transform = `translateX(-${slideWidth * currentSlideIndex}px)`;
+document.addEventListener("DOMContentLoaded", function () {
+  const track = document.querySelector(".carousel-track");
+  const slides = Array.from(document.querySelectorAll(".carousel-slide"));
+  const prevButton = document.querySelector(".left-arrow");
+  const nextButton = document.querySelector(".right-arrow");
+  
+  let slideWidth = slides[0].offsetWidth + 10; // 10px 是 gap
+  let currentIndex = 0;
+  let maxIndex = slides.length - 1;
+  
+  nextButton.addEventListener("click", function () {
+    if (currentIndex < maxIndex) {
+      currentIndex++;
+      track.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
     }
-  }
+  });
+
+  prevButton.addEventListener("click", function () {
+    if (currentIndex > 0) {
+      currentIndex--;
+      track.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
+    }
+  });
+
+  // 確保在視窗大小改變時，重新計算圖片寬度
+  window.addEventListener("resize", function () {
+    slideWidth = slides[0].offsetWidth + 10;
+    track.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
+  });
 });
