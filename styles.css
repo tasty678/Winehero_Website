@@ -26,7 +26,7 @@ body {
     justify-content: center; /* 水平置中 */
     align-items: center; /* 垂直置中（如果有高度限制） */
     height: 100px; /* 可以自行調整高度 */
-    background-color: #476078;
+    background-color: #52677D;
     margin-top: 0px; /* 調整上方間距 */
   }
 
@@ -44,7 +44,7 @@ body {
   nav {
     display: flex;
     position: relative;
-    background-color: #4a76a1; /* 背景色，避免滾動時內容透過 menu 顯示 */
+    background-color: #6e819a; /* 背景色，避免滾動時內容透過 menu 顯示 */
     z-index: 1000;
     transition: all 0.3s ease-in-out; /* 平滑過渡效果 */
     justify-content: center; /* 水平置中 */
@@ -133,6 +133,7 @@ body {
 
     /* Products Section */
   .products-container {
+    font-size: 1.8vw;
     position: relative;
     overflow: visible;
     text-align: center;
@@ -140,6 +141,18 @@ body {
     padding: 20px;
     color: #40475f;
   }
+
+  @media (max-width: 768px) {
+    .products-container {
+      font-size: 1rem; /* 中等螢幕時的字體大小 */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .products-container {
+      font-size: 0.5rem; /* 小螢幕時的字體大小 */
+    }
+  } 
 
   .carousel {
     display: flex;
@@ -192,7 +205,7 @@ body {
   }
 
   .product-info {
-    background-color: white;
+    background-color: #ffffff;
     padding: 10px;
     margin-top: 10px;
     border-radius: 5px;
@@ -207,15 +220,15 @@ body {
   .learn-more {
     margin-top: 10px;
     padding: 5px 10px;
-    background-color: #4a76a1;
-    color: white;
+    background-color: #f7f7f7;
+    color: #3b5868;
     border: none;
     border-radius: 5px;
     cursor: pointer;
   }
 
   .learn-more:hover {
-    background-color: #3a5a81;
+    background-color: #9badc4;
   }
 
   .arrow {
@@ -240,7 +253,88 @@ body {
   .right-arrow {
     right: 5%;
   }
+
+  .quote-container {
+    background-color: #384455;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-top: 30px;
+    height: 180px;
+    
+  }
+  .quote-container p {
+    font-size: 2rem;
+    text-indent: -15%;
   
+  }
+
+  .news-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-top: 30px;
+    height: 500px;
+  }
+
+  .services-container {
+    padding: 200px;
+    margin-top: 30px;
+  }
+  
+  .services-container h2 {
+    text-align: center; /* 文字置中 */
+    margin-bottom: 20px; /* 與下方內容保持間距 */
+    font-size: 2rem; /* 調整字體大小 */
+    color: #333; /* 可選：設置文字顏色 */
+  }
+  
+  .service-items {
+    display: flex; /* 使用 Flexbox */
+    justify-content: space-around; /* 水平分布，項目之間均勻分隔 */
+    align-items: center; /* 垂直置中 */
+    flex-wrap: wrap; /* 允許換行 */
+    gap: 20px; /* 增加項目之間的間距 */
+    margin-top: 50px; /* 與上方標題保持間距 */
+  }
+  
+  .service-item {
+    flex: 1; /* 每個項目平分可用空間 */
+    max-width: 200px; /* 限制每個項目的最大寬度 */
+    text-align: center; /* 文字置中 */
+    padding: 20px;
+    background-color: #f7f7f7; /* 項目背景色 */
+    border: 1px solid #ddd; /* 項目邊框 */
+    border-radius: 10px; /* 圓角 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 陰影效果 */
+  }
+  
+  .service-icon {
+    width: 50px; /* 圖標寬度 */
+    height: 50px; /* 圖標高度 */
+    margin-bottom: 10px; /* 圖標與文字之間的間距 */
+  }
+  
+  .service-item p {
+    font-size: 1rem; /* 文字大小 */
+    color: #555; /* 文字顏色 */
+  }
+  
+  @media (max-width: 768px) {
+    .service-items {
+      flex-direction: column; /* 小螢幕時改為垂直排列 */
+      align-items: center;
+    }
+  
+    .service-item {
+      max-width: 100%; /* 小螢幕時項目佔滿寬度 */
+      margin-bottom: 20px; /* 增加項目之間的間距 */
+    }
+  }
+
   /* 頁尾 */
   footer {
     background-color: #476078;
