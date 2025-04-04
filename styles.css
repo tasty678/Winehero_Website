@@ -30,49 +30,70 @@ body {
     margin-top: 0px; /* 調整上方間距 */
   }
 
+
   /* Responsive styling for smaller screens */
   @media (max-width: 600px) {
     nav {
       font-size: 10px; /* Reduce font size */
-      word-wrap: normal /* Allow text to wrap */
+      flex-direction: column; /* 小螢幕時改為垂直排列 */
+      gap: 10px; /* 增加選項之間的間距 */
       }
   }
   
   
   nav {
+    display: flex;
     position: relative;
     background-color: #4a76a1; /* 背景色，避免滾動時內容透過 menu 顯示 */
     z-index: 1000;
     transition: all 0.3s ease-in-out; /* 平滑過渡效果 */
     justify-content: center; /* 水平置中 */
     align-items: center; /* 垂直置中 */
+    padding: 0 10px; /* 調整內邊距 */
 
   }
   .menu {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center; /* 垂直置中（如果有高度限制） */
     list-style: none;
     padding: 0;
     margin: 0;
     height: 50px;
-    width: 85%;
+    width: 80%;
+    max-width: 1200px;
   }
   .menu li {
     position: relative;
-    flex: 1; /* 每個選項佔據相同的空間 */
     text-align: center; /* 文字置中 */
   }
   .menu a {
     text-decoration: none;
     color: white;
-    padding: 5px 10px;
+    padding: 10px 15px;
+    font-size: 1rem;
     transition: 0.3s;
   }
   .menu a:hover {
     background-color: #97b7d7;
     border-radius: 5px;
   }
+  @media (max-width: 768px) {
+    .menu a {
+      font-size: 0.9rem; /* 小螢幕時縮小字體 */
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .menu {
+      width: 100%; /* 小螢幕時佔滿寬度 */
+      gap: 10px; /* 增加選項之間的間距 */
+    }
+  
+    .menu a {
+      font-size: 0.8rem; /* 更小的螢幕進一步縮小字體 */
+    }
+  } 
   
   /* 下拉選單 */
   .dropdown-menu {
