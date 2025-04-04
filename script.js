@@ -27,6 +27,25 @@ rightArrow.addEventListener("click", () => {
   }
 });
 
+window.addEventListener("scroll", () => {
+  const nav = document.querySelector("nav");
+  const headerHeight = document.querySelector(".logo-container").offsetHeight;
+
+  console.log("Scroll position:", window.scrollY); // 檢查滾動位置
+  console.log("Header height:", headerHeight); // 檢查 logo-container 高度
+
+  if (window.scrollY > headerHeight) {
+    // 當滾動超過 logo-container 的高度時，固定 menu
+    nav.style.position = "fixed";
+    nav.style.top = "0";
+    nav.style.width = "100%";
+    nav.style.zIndex = "1000"; // 確保 menu 顯示在最上層
+  } else {
+    // 滾動回到頂部時，恢復原始位置
+    nav.style.position = "relative";
+  }
+});
+
 // Move to the previous slide
 leftArrow.addEventListener("click", () => {
   if (currentSlideIndex > 0) {
@@ -34,3 +53,4 @@ leftArrow.addEventListener("click", () => {
     track.style.transform = `translateX(-${slideWidth * currentSlideIndex}px)`;
   }
 });
+

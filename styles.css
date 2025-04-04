@@ -115,7 +115,8 @@ body {
     /* Products Section */
   .products-container {
     text-align: center;
-    padding: 20px;
+    margin: 0;
+    padding: 30px;
   }
 
   .carousel {
@@ -124,13 +125,14 @@ body {
     justify-content: center;
     position: relative;
     overflow: hidden;
-    max-width: 80%;
+    max-width: 70%;
     margin: 0 auto;
   }
 
   .carousel-track-container {
     overflow: hidden;
     width: 100%;
+    margin: 0 auto;
   }
 
   .carousel-track {
@@ -193,11 +195,11 @@ body {
   }
 
   .left-arrow {
-    left: -50px;
+    left: -8px;
   }
 
   .right-arrow {
-    right: -50px;
+    right: -8px;
   }
   
   /* 頁尾 */
