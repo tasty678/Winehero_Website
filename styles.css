@@ -83,11 +83,11 @@ body {
   @media (max-width: 600px) {
     .menu {
       width: 100%; /* 小螢幕時佔滿寬度 */
-      gap: 2px; /* 增加選項之間的間距 */
+      gap: 1px; /* 增加選項之間的間距 */
     }
   
     .menu a {
-      font-size: 0.8rem; /* 更小的螢幕進一步縮小字體 */
+      font-size: 0.7rem; /* 更小的螢幕進一步縮小字體 */
     }
   } 
   
