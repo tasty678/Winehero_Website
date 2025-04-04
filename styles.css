@@ -214,13 +214,11 @@ body {
   }
 
   .left-arrow {
-    margin-left: 100px;
-    left: -60px;
+    left: 5%;
   }
 
   .right-arrow {
-    margin-right: 100px;
-    right: -60px;
+    right: 5%;
   }
   
   /* 頁尾 */
