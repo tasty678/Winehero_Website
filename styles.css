@@ -30,13 +30,9 @@ body {
     margin-top: 0px; /* 調整上方間距 */
   }
 
-  /* 導航列 */
-  header {
-    background-color: #384a5b;
-  }
   /* Responsive styling for smaller screens */
   @media (max-width: 600px) {
-    header {
+    nav {
       font-size: 10px; /* Reduce font size */
       word-wrap: normal /* Allow text to wrap */
       }
@@ -44,10 +40,11 @@ body {
   
   
   nav {
-    display: flex;
-    justify-content: center;
-    align-items: center; /* 垂直置中（如果有高度限制） */
-    height: 40px;   
+    position: relative;
+    background-color: #4a76a1; /* 背景色，避免滾動時內容透過 menu 顯示 */
+    z-index: 1000;
+    transition: all 0.3s ease-in-out; /* 平滑過渡效果 */
+
   }
   .menu {
     display: flex;
@@ -56,6 +53,7 @@ body {
     list-style: none;
     padding: 0;
     margin: 0;
+    height: 50px;
     width: 85%;
   }
   .menu li {
@@ -112,6 +110,94 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
+  }
+
+    /* Products Section */
+  .products-container {
+    text-align: center;
+    padding: 20px;
+  }
+
+  .carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  .carousel-track-container {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .carousel-slide {
+    min-width: 300px; /* 每個產品的寬度 */
+    margin: 0 10px;
+    text-align: center;
+  }
+
+  .carousel-slide img {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .product-info {
+    background-color: white;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .product-info h3 {
+    margin: 0;
+    font-size: 16px;
+  }
+
+  .learn-more {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #4a76a1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .learn-more:hover {
+    background-color: #3a5a81;
+  }
+
+  .arrow {
+    background: none; /* 移除按鈕的背景色 */
+    border: none; /* 移除按鈕的邊框 */
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    padding: 0; /* 移除內邊距 */
+  }
+
+  .arrow img {
+    width: 40px; /* 調整箭頭圖片的寬度 */
+    height: 40px; /* 調整箭頭圖片的高度 */
+  }
+
+  .left-arrow {
+    left: -50px;
+  }
+
+  .right-arrow {
+    right: -50px;
   }
   
   /* 頁尾 */

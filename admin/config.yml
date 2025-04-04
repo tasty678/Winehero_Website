@@ -16,6 +16,7 @@ collections:
     slug: "{{slug}}"
     fields:
       - { label: "名稱", name: "name", widget: "string" }
+      - { label: "品牌", name: "brand", widget: "string" }
       - { label: "描述", name: "description", widget: "text" }
       - { label: "價格", name: "price", widget: "number" }
       - { label: "圖片", name: "image", widget: "image" }

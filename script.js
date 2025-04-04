@@ -5,16 +5,32 @@ function buttonClicked() {
         "Button Clicked times: " + numButtonClicks;
 }
 
-let lastScrollY = window.scrollY;
-const nav = document.querySelector("nav");
+const track = document.querySelector(".carousel-track");
+const slides = Array.from(track.children);
+const leftArrow = document.querySelector(".left-arrow");
+const rightArrow = document.querySelector(".right-arrow");
 
-window.addEventListener("scroll", () => {
-  if (window.scrollY > lastScrollY) {
-    // 向下滾動，隱藏導航列
-    nav.style.transform = "translateY(-100%)";
-  } else {
-    // 向上滾動，顯示導航列
-    nav.style.transform = "translateY(0)";
+const slideWidth = slides[0].getBoundingClientRect().width;
+
+// Arrange the slides next to one another
+slides.forEach((slide, index) => {
+  slide.style.left = slideWidth * index + "px";
+});
+
+let currentSlideIndex = 0;
+
+// Move to the next slide
+rightArrow.addEventListener("click", () => {
+  if (currentSlideIndex < slides.length - 3) {
+    currentSlideIndex++;
+    track.style.transform = `translateX(-${slideWidth * currentSlideIndex}px)`;
   }
-  lastScrollY = window.scrollY;
+});
+
+// Move to the previous slide
+leftArrow.addEventListener("click", () => {
+  if (currentSlideIndex > 0) {
+    currentSlideIndex--;
+    track.style.transform = `translateX(-${slideWidth * currentSlideIndex}px)`;
+  }
 });
