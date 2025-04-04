@@ -71,3 +71,17 @@ leftArrow.addEventListener("click", () => {
   }
 });
 
+rightArrow.addEventListener("click", () => {
+  const visibleSlides = getVisibleSlides();
+  if (currentSlideIndex < slides.length - visibleSlides) {
+    currentSlideIndex++;
+    track.style.transform = `translateX(-${slideWidth * currentSlideIndex}px)`;
+  } else {
+    // 如果是最後一個產品，確保它完全顯示
+    const remainingSlides = slides.length - currentSlideIndex - visibleSlides;
+    if (remainingSlides > 0) {
+      currentSlideIndex += remainingSlides;
+      track.style.transform = `translateX(-${slideWidth * currentSlideIndex}px)`;
+    }
+  }
+});

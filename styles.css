@@ -132,6 +132,12 @@ body {
     margin: 0 auto;
   }
 
+  @media (max-width: 768px) {
+    .carousel {
+      justify-content: flex-start; /* 小螢幕時改為從左開始對齊 */
+    }
+  }
+
   .carousel-track-container {
     overflow: hidden;
     width: 100%;
