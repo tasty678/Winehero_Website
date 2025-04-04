@@ -281,7 +281,7 @@ body {
   }
 
   .services-container {
-    padding: 200px;
+    padding: 100px;
     margin-top: 30px;
   }
   
@@ -331,6 +331,65 @@ body {
   
     .service-item {
       max-width: 100%; /* 小螢幕時項目佔滿寬度 */
+      margin-bottom: 20px; /* 增加項目之間的間距 */
+    }
+  }
+
+  .follow-us-container {
+    padding: 100px;
+    margin-top: 30px;
+    text-align: center;
+  }
+  
+  .follow-us-container h2 {
+    text-align: center; /* 文字置中 */
+    margin-bottom: 20px; /* 與下方內容保持間距 */
+    font-size: 2rem; /* 調整字體大小 */
+    color: #333; /* 可選：設置文字顏色 */
+  }
+  
+  .instagram-items {
+    display: flex; /* 使用 Flexbox */
+    justify-content: space-around; /* 水平分布，項目之間均勻分隔 */
+    align-items: center; /* 垂直置中 */
+    gap: 20px; /* 增加項目之間的間距 */
+  }
+  
+  .instagram-item {
+    text-align: center; /* 文字置中 */
+  }
+  
+  .polaroid-frame {
+    width: 200px; /* 框架寬度 */
+    height: 250px; /* 框架高度 */
+    background-color: #fff; /* 拍立得背景色 */
+    border: 10px solid #ddd; /* 拍立得邊框 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* 陰影效果 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* 確保圖片不超出框架 */
+  }
+  
+  .instagram-photo {
+    width: 100%; /* 圖片寬度 */
+    height: auto; /* 保持圖片比例 */
+  }
+  
+  .instagram-item a {
+    text-decoration: none; /* 移除連結的下劃線 */
+    color: inherit; /* 繼承文字顏色 */
+  }
+
+  @media (max-width: 768px) {
+    .instagram-items {
+      flex-direction: column; /* 小螢幕時改為垂直排列 */
+      align-items: center;
+    }
+  
+    .polaroid-frame {
+      width: 100%; /* 小螢幕時框架佔滿寬度 */
+      max-width: 300px; /* 限制框架最大寬度 */
       margin-bottom: 20px; /* 增加項目之間的間距 */
     }
   }
