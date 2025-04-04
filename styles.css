@@ -78,16 +78,12 @@ body {
     background-color: #97b7d7;
     border-radius: 5px;
   }
-  @media (max-width: 768px) {
-    .menu a {
-      font-size: 0.9rem; /* 小螢幕時縮小字體 */
-    }
-  }
+
   
   @media (max-width: 600px) {
     .menu {
       width: 100%; /* 小螢幕時佔滿寬度 */
-      gap: 10px; /* 增加選項之間的間距 */
+      gap: 2px; /* 增加選項之間的間距 */
     }
   
     .menu a {
