@@ -119,6 +119,7 @@ body {
     text-align: center;
     margin: 0 auto;
     padding: 20px;
+    color: #40475f;
   }
 
   .carousel {
@@ -141,14 +142,23 @@ body {
     list-style: none;
     display: flex;
     transition: transform 0.5s ease-in-out;
+    padding: 0;
+    margin: 0;
   }
 
   .carousel-slide {
+    flex: 0 0 calc(33.33% - 20px); /* 每個產品的寬度 */
     list-style: none;
-    min-width: 300px; /* 每個產品的寬度 */
-    margin: 0 10px;
+    margin: 10px;
     text-align: center;
+    box-sizing: border-box;
   }
+
+  @media (max-width: 768px) {
+    .carousel-slide {
+      flex: 0 0 calc(50% - 20px); /* 小螢幕時每個產品占 100% 的寬度 */
+    }
+  }  
 
   .carousel-slide img {
     width: 100%;
@@ -199,12 +209,12 @@ body {
 
   .left-arrow {
     margin-left: 100px;
-    left: -10px;
+    left: -60px;
   }
 
   .right-arrow {
     margin-right: 100px;
-    right: -10px;
+    right: -60px;
   }
   
   /* 頁尾 */

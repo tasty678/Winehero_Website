@@ -5,28 +5,6 @@ function buttonClicked() {
         "Button Clicked times: " + numButtonClicks;
 }
 
-const track = document.querySelector(".carousel-track");
-const slides = Array.from(track.children);
-const leftArrow = document.querySelector(".left-arrow");
-const rightArrow = document.querySelector(".right-arrow");
-
-const slideWidth = slides[0].getBoundingClientRect().width;
-
-// Arrange the slides next to one another
-slides.forEach((slide, index) => {
-  slide.style.left = slideWidth * index + "px";
-});
-
-let currentSlideIndex = 0;
-
-// Move to the next slide
-rightArrow.addEventListener("click", () => {
-  if (currentSlideIndex < slides.length - 3) {
-    currentSlideIndex++;
-    track.style.transform = `translateX(-${slideWidth * currentSlideIndex}px)`;
-  }
-});
-
 window.addEventListener("scroll", () => {
   const nav = document.querySelector("nav");
   const headerHeight = document.querySelector(".logo-container").offsetHeight;
@@ -46,7 +24,46 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// Move to the previous slide
+
+const track = document.querySelector(".carousel-track");
+const slides = Array.from(track.children);
+const leftArrow = document.querySelector(".left-arrow");
+const rightArrow = document.querySelector(".right-arrow");
+
+let currentSlideIndex = 0;
+
+// 計算每個產品的寬度
+function updateSlideWidth() {
+  const slideWidth = slides[0].getBoundingClientRect().width;
+  slides.forEach((slide, index) => {
+    slide.style.left = slideWidth * index + "px";
+  });
+  return slideWidth;
+}
+
+let slideWidth = updateSlideWidth();
+
+// 計算每次滑動的產品數量
+function getVisibleSlides() {
+  const viewportWidth = window.innerWidth;
+  return viewportWidth <= 768 ? 2 : 3; // 小螢幕顯示 2 個，大螢幕顯示 3 個
+}
+
+// 監聽視窗大小變化，重新計算寬度
+window.addEventListener("resize", () => {
+  slideWidth = updateSlideWidth();
+});
+
+// 向右滑動
+rightArrow.addEventListener("click", () => {
+  const visibleSlides = getVisibleSlides();
+  if (currentSlideIndex < slides.length - visibleSlides) {
+    currentSlideIndex++;
+    track.style.transform = `translateX(-${slideWidth * currentSlideIndex}px)`;
+  }
+});
+
+// 向左滑動
 leftArrow.addEventListener("click", () => {
   if (currentSlideIndex > 0) {
     currentSlideIndex--;
