@@ -44,11 +44,13 @@ body {
     background-color: #4a76a1; /* 背景色，避免滾動時內容透過 menu 顯示 */
     z-index: 1000;
     transition: all 0.3s ease-in-out; /* 平滑過渡效果 */
+    justify-content: center; /* 水平置中 */
+    align-items: center; /* 垂直置中 */
 
   }
   .menu {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center; /* 垂直置中（如果有高度限制） */
     list-style: none;
     padding: 0;
