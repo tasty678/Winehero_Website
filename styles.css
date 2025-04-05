@@ -413,6 +413,8 @@ body {
   @media (max-width: 768px) {
     .news-content {
       flex-direction: column; /* 小螢幕時改為垂直排列 */
+      margin: 10px;
+      align-items: center; /* 置中對齊 */
     }
   
     .news-photo-container {
@@ -427,7 +429,6 @@ body {
     }
   
     .news-text-container {
-      padding-left: 0; /* 移除左側間距 */
       text-align: center; /* 文字置中 */
       gap: 5px; /* 減少子元素之間的間距 */
     }
