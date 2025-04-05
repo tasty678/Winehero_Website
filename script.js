@@ -24,6 +24,33 @@ window.addEventListener("scroll", () => {
   }
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const productsHeading = document.querySelector(".products-container h2");
+
+  // 建立 Intersection Observer
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // 當 h2 進入視窗時，增加字體大小
+          productsHeading.style.transition = "font-size 0.4s ease";
+          productsHeading.style.fontSize = "1.5rem"; // 放大字體
+        } else {
+          // 當 h2 離開視窗時，恢復原本字體大小
+          productsHeading.style.fontSize = "0.8rem"; // 恢復字體大小
+        }
+      });
+    },
+    {
+      threshold: 0.5, // 當 h2 有 50% 可見時觸發
+    }
+  );
+
+  // 觀察 h2 元素
+  observer.observe(productsHeading);
+});
+
+// 這段程式用於 Product-container 內的 carousel
 document.addEventListener("DOMContentLoaded", function () {
   const track = document.querySelector(".carousel-track");
   const slides = Array.from(document.querySelectorAll(".carousel-slide"));

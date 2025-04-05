@@ -44,7 +44,7 @@ body {
   nav {
     display: flex;
     position: relative;
-    background-color: #6e819a; /* 背景色，避免滾動時內容透過 menu 顯示 */
+    background-color: #6e819ac2; /* 背景色，避免滾動時內容透過 menu 顯示 */
     z-index: 1000;
     transition: all 0.3s ease-in-out; /* 平滑過渡效果 */
     justify-content: center; /* 水平置中 */
@@ -133,13 +133,14 @@ body {
 
     /* Products Section */
   .products-container {
-    font-size: 1.8vw;
+    font-family: 'Verdana', sans-serif;
+    font-weight: lighter;
     position: relative;
     overflow: visible;
     text-align: center;
     margin: 0 auto;
     padding: 20px;
-    color: #40475f;
+    color: #36404b;
   }
 
   @media (max-width: 768px) {
