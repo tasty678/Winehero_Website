@@ -116,4 +116,33 @@ document.addEventListener("DOMContentLoaded", () => {
   observer.observe(quoteContainer);
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const newsSection = document.querySelector(".news-container");
+  const newsHeading = document.querySelector(".news-text-container h2");
+  const newsImage = document.querySelector(".news-photo");
+
+  // 建立 Intersection Observer
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // 當進入視窗時，添加動畫類名
+          newsHeading.classList.add("heading-grow");
+          newsImage.classList.add("image-visible");
+        } else {
+          // 當離開視窗時，移除動畫類名
+          newsHeading.classList.remove("heading-grow");
+          newsImage.classList.remove("image-visible");
+        }
+      });
+    },
+    {
+      threshold: 0.5, // 當區塊有 50% 可見時觸發
+    }
+  );
+
+  // 觀察 news-container
+  observer.observe(newsSection);
+});
+
   

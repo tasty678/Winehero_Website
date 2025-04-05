@@ -257,14 +257,14 @@ body {
 
   .quote-container {
     position: relative;
-    background-color: #384455;
+    background-color: #5d6269;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
     margin-top: 30px;
-    height: 180px;
+    height: 200px;
     text-align: center;
     
   }
@@ -333,20 +333,143 @@ body {
   .text-grow {
     animation: grow 1.5s ease-in-out forwards; /* 放大動畫 */
   }
-  
 
+  /* news section */
   .news-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    margin-top: 30px;
-    height: 500px;
+    flex-direction: column; /* 讓標題和內容垂直排列 */
+    height: auto; /* 高度自適應 */
+    overflow: hidden; /* 隱藏超出容器的內容 */
+  }
+  
+  .news-content {
+    display: flex; /* 使用 Flexbox 讓照片和文字水平排列 */
+    flex: 1; /* 讓內容填滿剩餘空間 */
+    gap: 20px; /* 增加間距 */
+  }
+  
+  .news-photo-container {
+    flex: 0 0 50%; /* 照片佔父容器的 50% 寬度 */
+    height: auto; /* 高度自適應 */
+  }
+  
+  .news-photo {
+    width: 100%; /* 照片寬度佔滿容器 */
+    height: auto; /* 高度自適應 */
+    object-fit: cover; /* 確保照片不會變形 */
+  }
+  
+  .news-text-container {
+    flex: 1; /* 文字內容填滿剩餘空間 */
+    display: flex;
+    flex-direction: column; /* 讓文字內容垂直排列 */
+    justify-content: space-between; /* 讓內容在容器內分散排列 */
+    padding: 80px; /* 與照片保持間距 */
+    position: relative; /* 讓內容可以相對定位 */
+    font-family: 'Verdana', sans-serif;
+    font-weight: lighter;
   }
 
+  .news-text-container h2 {
+    position: static; /* 移除相對定位，讓它遵循正常文檔流 */
+    text-align: center; /* 標題置中 */
+    margin: 20px 0; /* 調整上下間距，避免與其他元素重疊 */
+    font-size: 1.5rem; /* 調整標題字體大小 */
+    color: #333; /* 可選：設置標題顏色 */
+  }
+
+  .news-text-container h4 {
+    position: static; /* 移除相對定位 */
+    margin: 10px 0; /* 調整上下間距 */
+    font-size: 1rem; /* 調整字體大小 */
+    color: #555; /* 可選：設置文字顏色 */
+  }
+
+  .news-text-container p {
+    position: static; /* 移除相對定位 */
+    margin: 10px 0; /* 調整上下間距 */
+    font-size: 1rem; /* 調整字體大小 */
+    color: #555; /* 可選：設置文字顏色 */
+  }
+
+  .read-more {
+    display: inline-block; /* 讓按鈕成為行內區塊元素 */
+    margin: 0 auto; /* 左右置中 */
+    padding: 10px 15px;
+    background-color: #99a5b2b7;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    text-align: center; /* 文字置中 */
+    width: 30%; /* 可選：按鈕寬度 */
+    position: static; /* 讓按鈕遵循正常文檔流 */
+  }
+  
+  .read-more:hover {
+    background-color: #3b5868;
+  }
+  
+  @media (max-width: 768px) {
+    .news-content {
+      flex-direction: column; /* 小螢幕時改為垂直排列 */
+    }
+  
+    .news-photo-container {
+      width: 100%; /* 照片寬度佔滿容器 */
+      height: auto; /* 高度自適應 */
+    }
+  
+    .news-photo {
+      width: 100%; /* 照片寬度佔滿容器 */
+      height: auto; /* 高度自適應 */
+      object-fit: cover; /* 確保照片不會變形 */
+    }
+  
+    .news-text-container {
+      padding-left: 0; /* 移除左側間距 */
+      text-align: center; /* 文字置中 */
+      gap: 5px; /* 減少子元素之間的間距 */
+    }
+
+    .news-text-container h2 {
+      font-size: 1.2rem; /* 縮小標題字體大小 */
+      margin: 10px 0; /* 減少上下間距 */
+    }
+
+    .news-text-container h4,
+    .news-text-container p {
+      font-size: 0.9rem; /* 縮小文字字體大小 */
+      margin: 5px 0; /* 減少上下間距 */
+    }
+  }
+
+  @keyframes grow {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.2);
+    }
+  }
+  
+  .heading-grow {
+    animation: grow 0.5s ease-in-out forwards; /* 放大動畫 */
+  }
+
+  .news-photo {
+    opacity: 0.1; /* 初始透明度較低 */
+    transition: opacity 5s ease; /* 平滑過渡效果 */
+  }
+  
+  .image-visible {
+    opacity: 1; /* 滑到時透明度變為 100% */
+  }
+
+
+  /* 服務項目區域 */
   .services-container {
-    padding: 100px;
-    margin-top: 30px;
+    padding: 50px 100px; /* 上下 20px，左右 100px */
   }
   
   .services-container h2 {
