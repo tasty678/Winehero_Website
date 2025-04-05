@@ -24,6 +24,7 @@ window.addEventListener("scroll", () => {
   }
 });
 
+// 這段程式用於產品區塊的 h2 標題
 document.addEventListener("DOMContentLoaded", () => {
   const productsHeading = document.querySelector(".products-container h2");
 
@@ -81,3 +82,38 @@ document.addEventListener("DOMContentLoaded", function () {
     track.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
   });
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const quoteContainer = document.querySelector(".quote-container");
+  const leftQuote = document.querySelector(".left-quote");
+  const rightQuote = document.querySelector(".right-quote");
+  const quoteText = document.querySelector(".quote-container p");
+
+  // 建立 Intersection Observer
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // 當進入視窗時，添加動畫類名
+          leftQuote.classList.add("swing-left");
+          rightQuote.classList.add("swing-right");
+          quoteText.classList.add("text-grow");
+        } else {
+          // 當離開視窗時，移除動畫類名
+          leftQuote.classList.remove("swing-left");
+          rightQuote.classList.remove("swing-right");
+          quoteText.classList.remove("text-grow");
+        }
+      });
+    },
+    {
+      threshold: 0.5, // 當區塊有 50% 可見時觸發
+    }
+  );
+
+  // 觀察 quote-container
+  observer.observe(quoteContainer);
+});
+
+  

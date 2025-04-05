@@ -256,6 +256,7 @@ body {
   }
 
   .quote-container {
+    position: relative;
     background-color: #384455;
     color: white;
     display: flex;
@@ -264,13 +265,75 @@ body {
     padding: 20px;
     margin-top: 30px;
     height: 180px;
+    text-align: center;
     
   }
   .quote-container p {
     font-size: 2rem;
     text-indent: -15%;
+    font-family: sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    margin: 0;
+    z-index: 1;
   
   }
+
+  .left-quote {
+    position: absolute;
+    top: 15%; /* 距離容器頂部 10px */
+    left: 18%; /* 距離容器左側 10px */
+    width: 8%; /* 調整圖片大小 */
+    height: auto; /* 保持比例 */
+  }
+  
+  .right-quote {
+    position: absolute; /* 絕對定位 */
+    bottom: 15%; /* 距離容器底部 10% */
+    right: 23%; /* 距離容器右側 5% */
+    width: 8%; /* 圖片寬度為容器寬度的 10% */
+    height: auto; /* 保持比例 */
+  }
+
+  @keyframes swing {
+    0% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(-10deg);
+    }
+    50% {
+      transform: rotate(10deg);
+    }
+    75% {
+      transform: rotate(-10deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  
+  .swing-left {
+    animation: swing 1s ease-in-out infinite; /* 左右搖擺動畫 */
+  }
+  
+  .swing-right {
+    animation: swing 1s ease-in-out infinite; /* 左右搖擺動畫 */
+  }
+
+  @keyframes grow {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.2);
+    }
+  }
+  
+  .text-grow {
+    animation: grow 1.5s ease-in-out forwards; /* 放大動畫 */
+  }
+  
 
   .news-container {
     display: flex;
