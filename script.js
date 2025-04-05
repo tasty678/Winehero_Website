@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           // 當 h2 進入視窗時，增加字體大小
-          productsHeading.style.transition = "font-size 0.4s ease";
+          productsHeading.style.transition = "font-size 0.8s ease";
           productsHeading.style.fontSize = "1.5rem"; // 放大字體
         } else {
           // 當 h2 離開視窗時，恢復原本字體大小
@@ -145,4 +145,28 @@ document.addEventListener("DOMContentLoaded", () => {
   observer.observe(newsSection);
 });
 
-  
+// 這段程式用於服務區塊的 h2 標題
+document.addEventListener("DOMContentLoaded", () => {
+  const productsHeading = document.querySelector(".services-container h2");
+
+  // 建立 Intersection Observer
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // 當 h2 進入視窗時，增加字體大小
+          productsHeading.style.transition = "font-size 0.8s ease";
+          productsHeading.style.fontSize = "1.8rem"; // 放大字體
+        } else {
+          // 當 h2 離開視窗時，恢復原本字體大小
+          productsHeading.style.fontSize = "0.8rem"; // 恢復字體大小
+        }
+      });
+    },
+    {
+      threshold: 0.5, // 當 h2 有 50% 可見時觸發
+    }
+  );
+  // 觀察 h2 元素
+  observer.observe(productsHeading);
+});
