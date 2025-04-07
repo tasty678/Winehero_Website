@@ -26,7 +26,7 @@ body {
     justify-content: center; /* 水平置中 */
     align-items: center; /* 垂直置中（如果有高度限制） */
     height: 100px; /* 可以自行調整高度 */
-    background-color: #52677D;
+    background-color: #8492a1; /* 背景色 */
     margin-top: 0px; /* 調整上方間距 */
   }
 
@@ -44,7 +44,7 @@ body {
   nav {
     display: flex;
     position: relative;
-    background-color: #6e819ac2; /* 背景色，避免滾動時內容透過 menu 顯示 */
+    background-color: #8492a1d3; /* 背景色，避免滾動時內容透過 menu 顯示 */
     z-index: 1000;
     transition: all 0.3s ease-in-out; /* 平滑過渡效果 */
     justify-content: center; /* 水平置中 */
@@ -536,7 +536,7 @@ body {
   
   /* 頁尾 */
   footer {
-    background-color: #476078;
+    background-color: #45474d;
     color: white;
     text-align: center;
     padding: 10px 0;
@@ -550,7 +550,7 @@ body {
     justify-content: space-between; /* Align content to the left */
     align-items: center; /* Center vertically */
     padding: 10px;
-    background-color: #476078; /* Optional: Light background color */
+    background-color: #45474d; /* Optional: Light background color */
     flex-wrap: wrap;
   } 
   
