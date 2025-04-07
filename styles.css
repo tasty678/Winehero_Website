@@ -618,4 +618,11 @@ body {
     height: auto; /* 保持圖片比例 */
   }
 
+  /* HB Into Page */
+  .poster-container {
+    position: relative;
+  }
+
+  
+
  
