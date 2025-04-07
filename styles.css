@@ -619,10 +619,110 @@ body {
   }
 
   /* HB Into Page */
+
+  *,
+  *::before,
+  *::after {
+  box-sizing: border-box;
+}
   .poster-container {
-    position: relative;
+    position: relative; /* 父容器設置為相對定位 */
+    overflow: hidden; /* 隱藏超出容器的內容 */
+  }
+  
+  .poster-container img {
+    width: 100%; /* 確保圖片寬度佔滿容器 */
+    height: auto; /* 保持圖片比例 */
+  }
+  
+  .poster-content {
+    position: absolute; /* 絕對定位，放置在圖片上方 */
+    top: 0;
+    left: 5%;
+    width: calc(40% - 20px); /* 寬度為容器的 40% 減去邊距 */
+    height: 100%; /* 高度與圖片一致 */
+    display: flex; /* 使用 Flexbox 垂直排列內容 */
+    flex-direction: column;
+    justify-content: center; /* 垂直置中 */
+    align-items: flex-start; /* 水平靠左 */
+    padding: clamp(10px, 2vw, 20px); /* 內邊距 */
+    color: white; /* 文字顏色設為白色 */
+    box-sizing: border-box; /* 包括內邊距在內計算寬度 */
+  }
+  
+  .poster-content h1 {
+    font-size: 2.5rem; /* 調整字體大小 */
+    margin: 0 0 10px 0; /* 與 h2 保持間距 */
+    text-align: left; /* 靠左對齊 */
+    font-family:'Arial', sans-serif; /* 設置字體 */
+    font-weight: bold; /* 設置字體粗細 */
+  }
+  
+  .poster-content h2 {
+    font-size: 1.5rem; /* 調整字體大小 */
+    margin: 0 0 20px 0; /* 與其他內容保持間距 */
+    text-align: left; /* 靠左對齊 */
+    font-family: 'Palantin', sans-serif; /* 設置字體 */
+    font-variant: small-caps; /* 小型大寫字母 */
+  }
+  
+  .hb-intro-text {
+    background: rgba(255, 255, 255, 0.2); /* 白色透明背景 */
+    padding: 15px; /* 內邊距，讓文字不緊貼邊緣 */
+    border-radius: 5px; /* 圓角 */
+    margin-top: 0; /* 與上方內容保持間距 */
+    margin-bottom: 20px; /* 與按鈕保持間距 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 添加陰影效果 */
+    width: 70%; /* 區域寬度 */
+  }
+  
+  .poster-buttons {
+    margin-top: 20px; /* 與上方內容保持間距 */
+  }
+  
+  .poster-buttons button {
+    padding: 10px 20px; /* 調整按鈕大小 */
+    background-color: #3b5868; /* 按鈕背景色 */
+    color: white; /* 按鈕文字顏色 */
+    border: none; /* 移除邊框 */
+    border-radius: 5px; /* 圓角 */
+    cursor: pointer; /* 滑鼠移上去顯示手型 */
+    transition: background-color 0.3s ease; /* 添加過渡效果 */
   }
 
+  @media (max-width: 768px) {
+    .poster-content {
+      width: 100%
+      padding: 10px; /* 減少內邊距 */
+    }
+  
+    .poster-content h1 {
+      font-size: clamp(1.2rem, 4vw, 2rem); /* 縮小字體大小 */
+    }
+  
+    .poster-content h2 {
+      font-size: clamp(0.8rem, 2.5vw, 1.2rem); /* 縮小字體大小 */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .poster-content {
+      width: calc(80% - 10px); /* 小螢幕時寬度調整 */
+      padding: 5px; /* 減少內邊距 */
+    }
+  
+    .poster-content h1 {
+      font-size: 1.5rem; /* 固定字體大小 */
+    }
+  
+    .poster-content h2 {
+      font-size: 1rem; /* 固定字體大小 */
+    }
+  }
+  
+  .poster-buttons button:hover {
+    background-color: #2a3f4e; /* 滑鼠移上去時改變背景色 */
+  }
   
 
  
