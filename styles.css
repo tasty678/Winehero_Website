@@ -720,6 +720,7 @@ body {
           color: black;
           border: #3b5868 solid 1px;
           width: 60%;
+          margin-bottom: 15%;
       }
 
       .hb-intro-text, .poster-buttons {
@@ -735,7 +736,8 @@ body {
   position: relative; /* 確保子元素可以使用絕對定位 */
   padding: 20px; /* 整個 section 的內邊距 */
   box-sizing: border-box;
-  height: 800px; /* 設定 section 的高度，可根據需要調整 */
+  height: clamp(400px, 50vw, 700px); /* 高度自適應，最小 400px，最大 700px */
+  
 }
 
 /* 右半邊的背景區塊 */
@@ -767,7 +769,7 @@ body {
 /* 確保圖片填滿容器並保持比例 */
 .history-image img {
   height: 100%;
-  width: 100%;
+  width: auto; /* 自動調整寬度 */
   object-fit: contain; /* 確保圖片覆蓋整個區域 */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* 添加陰影效果 */
 }
@@ -777,7 +779,7 @@ body {
   position: relative; /* 相對定位，確保內部元素正常排列 */
   z-index: 3; /* 確保內容在圖片上方 */
   width: 50%; /* 占據左半邊的 50% */
-  padding: 20px; /* 內邊距，確保內容不緊貼邊緣 */
+  padding: clamp(20px, 4vw, 100px); /* 上下 20px，左右 5vw */
   display: flex;
   flex-direction: column;
   justify-content: center; /* 垂直置中 */
@@ -787,13 +789,14 @@ body {
 /* 文字內容內的標題 */
 .history-content h2 {
   text-align: center; /* 標題置中 */
-  margin-bottom: 20px; /* 與段落保持間距 */
-  font-size: 1.8rem; /* 調整字體大小 */
+  margin-bottom: 50px; /* 與段落保持間距 */
+  font-size: clamp(1.2rem, 2vw, 4rem); /* 字體大小自適應 */
 }
 
 /* 文字內容內的段落 */
 .history-content p {
   text-align: left; /* 段落靠左對齊 */
   line-height: 1.6; /* 行高 */
-  margin: 0; /* 移除段落的外邊距 */
+  font-size: clamp(0.8rem, 1.5vw, 1.3rem); /* 字體大小自適應 */
+  margin: 20px; /* 移除段落的外邊距 */
 }
