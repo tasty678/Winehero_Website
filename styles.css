@@ -719,6 +719,7 @@ body {
           margin-top: 1%;
           color: black;
           border: #3b5868 solid 1px;
+          width: 60%;
       }
 
       .hb-intro-text, .poster-buttons {
