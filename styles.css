@@ -727,3 +727,73 @@ body {
           color: black;
       }
   }
+
+  /* HB Intro History Section */
+  /* HB Intro History Section */
+.history-container {
+  display: flex; /* 使用 Flexbox 排列內容 */
+  position: relative; /* 確保子元素可以使用絕對定位 */
+  padding: 20px; /* 整個 section 的內邊距 */
+  box-sizing: border-box;
+  height: 800px; /* 設定 section 的高度，可根據需要調整 */
+}
+
+/* 右半邊的背景區塊 */
+.background-grid {
+  position: absolute; /* 絕對定位 */
+  top: 0;
+  right: 0;
+  width: 30%; /* 占據右半邊的 30% */
+  height: 100%; /* 高度與 section 一致 */
+  background-color: #a7a8a7; /* 半透明背景色，可根據需要調整 */
+  z-index: 1; /* 確保背景在最底層 */
+}
+
+/* 圖片區塊 */
+.history-image {
+  position: absolute; /* 絕對定位 */
+  top: 50%; /* 垂直置中 */
+  right: 12%; /* 往左偏移 10%（相對於 background-grid） */
+  transform: translateY(-50%); /* 垂直置中修正 */
+  z-index: 2; /* 確保圖片在背景上方 */
+  width: auto; /* 自動調整寬度 */
+  height: 80%; /* 高度占據 80% */
+  max-height: 80%; /* 最大高度占據 80% */
+  max-width: 100%; /* 最大寬度占據 100% */
+  overflow: hidden; /* 隱藏超出容器的部分 */
+  box-sizing: border-box;
+}
+
+/* 確保圖片填滿容器並保持比例 */
+.history-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain; /* 確保圖片覆蓋整個區域 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* 添加陰影效果 */
+}
+
+/* 文字內容區塊 */
+.history-content {
+  position: relative; /* 相對定位，確保內部元素正常排列 */
+  z-index: 3; /* 確保內容在圖片上方 */
+  width: 50%; /* 占據左半邊的 50% */
+  padding: 20px; /* 內邊距，確保內容不緊貼邊緣 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 垂直置中 */
+  box-sizing: border-box;
+}
+
+/* 文字內容內的標題 */
+.history-content h2 {
+  text-align: center; /* 標題置中 */
+  margin-bottom: 20px; /* 與段落保持間距 */
+  font-size: 1.8rem; /* 調整字體大小 */
+}
+
+/* 文字內容內的段落 */
+.history-content p {
+  text-align: left; /* 段落靠左對齊 */
+  line-height: 1.6; /* 行高 */
+  margin: 0; /* 移除段落的外邊距 */
+}
