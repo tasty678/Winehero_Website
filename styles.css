@@ -761,7 +761,7 @@ body {
   width: auto; /* 自動調整寬度 */
   height: 80%; /* 高度占據 80% */
   max-height: 80%; /* 最大高度占據 80% */
-  max-width: 100%; /* 最大寬度占據 100% */
+  max-width: 40%; /* 最大寬度占據 100% */
   overflow: hidden; /* 隱藏超出容器的部分 */
   box-sizing: border-box;
 }
@@ -789,7 +789,7 @@ body {
 /* 文字內容內的標題 */
 .history-content h2 {
   text-align: center; /* 標題置中 */
-  margin-bottom: 50px; /* 與段落保持間距 */
+  margin-bottom: 5%; /* 與段落保持間距 */
   font-size: clamp(1.2rem, 2vw, 4rem); /* 字體大小自適應 */
 }
 
