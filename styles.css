@@ -800,3 +800,60 @@ body {
   font-size: clamp(0.8rem, 1.5vw, 1.3rem); /* 字體大小自適應 */
   margin: 20px; /* 移除段落的外邊距 */
 }
+
+.hb-grid-container1 {
+  display: flex; /* 使用 flex 排列子元素 */
+  justify-content: flex-start; /* 子元素靠左對齊 */
+  align-items: flex-end; /* 垂直置中 */
+  height: 60vh; /* 父容器高度為視窗高度的 50% */
+  width: 100%; /* 父容器寬度 100% */
+  gap: 20px; /* 每個子元素之間的間距 */
+  box-sizing: border-box; /* 讓寬高計算包括邊框和內邊距 */
+}
+
+.hbimage-top {
+  height: 70%; /* 高度 70% */
+  width: auto; /* 寬度自動調整 */
+  clip-path: inset(0 0 30% 0); /* 顯示圖片上半部 */
+  margin-left: 5%; /* 距離父容器左側 5% */
+  flex: 1; /* 讓圖片區域有彈性 */
+  margin-bottom: 0; /* 移除下方間距 */
+}
+
+.hbimage-top img {
+  width: 100%; /* 確保圖片寬度占滿容器 */
+  height: 100%; /* 圖片高度自適應 */
+  object-fit: cover; /* 讓圖片不變形 */
+}
+
+#intro-content1 {
+  display: flex; /* 使用 flex 排列內部內容 */
+  flex-direction: column; /* 讓內容從上到下排列 */
+  justify-content: center; /* 讓內容垂直置中 */
+  align-items: center; /* 讓內容水平置中 */
+  padding: 20px; /* 內邊距 */
+  flex: 2; /* 讓內容區域佔用更多空間 */
+  height: 100%; /* 高度 100% */
+  margin-left: 5%; /* 距離左側 5% */
+}
+
+#intro-content1 h2,
+#intro-content1 p,
+#intro-content1 button {
+  text-align: center; /* 讓文字水平置中 */
+}
+
+.hb-drawing-top {
+  height: 60%; /* 高度 40% */
+  width: auto; /* 寬度自動調整 */
+  clip-path: inset(0 0 10% 0); /* 顯示圖片下部 */
+  margin-left: 5%; /* 距離父容器右側 5% */
+  flex: 1; /* 讓圖片區域有彈性 */
+  margin-bottom: 0; /* 移除下方間距 */
+}
+
+.hb-drawing-top img {
+  width: 100%; /* 確保圖片寬度占滿容器 */
+  height: 100%; /* 圖片高度自適應 */
+  object-fit: cover; /* 讓圖片不變形 */
+}
