@@ -806,7 +806,7 @@ body {
   display: flex; /* 使用 Flexbox 排列子元素 */
   justify-content: space-between; /* 子元素左右分布 */
   align-items: flex-end; /* 子元素與父容器底部對齊 */
-  height: 80vh; /* 父容器高度為視窗高度的 50% */
+  height: 60vh; /* 父容器高度為視窗高度的 50% */
   width: 100%; /* 父容器寬度 100% */
   gap: 1%; /* 子元素之間的間距 */
   box-sizing: border-box; /* 包括內邊距和邊框 */
@@ -818,8 +818,8 @@ body {
 .hbimage-top {
   bottom: 0; /* 確保裁切後的部分對齊容器底部 */
   margin-left: 10%;
-  width: auto; /* 寬度自適應 */
-  height: 100%; /* 高度為父容器的 100% */
+  flex: 0 0 30%;
+  height: auto; /* 高度為父容器的 100% */
   transform: translateY(30%); /* 將裁切後的部分向下移動，對齊底部 */
 }
 
@@ -853,8 +853,8 @@ body {
 /* hb-drawing-top */
 .hb-drawing-top {
   bottom: 0; /* 確保裁切後的部分對齊容器底部 */
-  width: auto; /* 寬度自適應 */
-  height: 50%; /* 高度為父容器的 40% */
+  flex: 0 0 20%; /* 占據父容器的 30% 寬度 */
+  height: auto;
   transform: translateY(10%); /* 將裁切後的部分向下移動，對齊底部 */
 }
 
@@ -863,3 +863,52 @@ body {
   height: 100%; /* 圖片高度占滿容器 */
   object-fit: cover; /* 確保圖片不變形 */
 }
+
+
+
+
+.hb-grid-container2 {
+  background-color: #fffbf5;
+  display: flex; /* 使用 Flexbox 排列子元素 */
+  justify-content: space-between; /* 子元素左右分布 */
+  align-items: flex-end; /* 子元素與父容器底部對齊 */
+  height: 60vh; /* 父容器高度為視窗高度的 50% */
+  width: 100%; /* 父容器寬度 100% */
+  gap: 1%; /* 子元素之間的間距 */
+  box-sizing: border-box; /* 包括內邊距和邊框 */
+  position: relative; /* 確保子元素的絕對定位基於這個容器 */
+  overflow: hidden; /* 隱藏超出容器的部分 */
+}
+
+.hbsherry-drawing-top {
+  bottom: 0; /* 確保裁切後的部分對齊容器底部 */
+  flex: 0 0 20%; /* 占據父容器的 30% 寬度 */
+  height: auto;
+  transform: translateY(50%); /* 將裁切後的部分向下移動，對齊底部 */
+}
+
+.hbsherry-drawing-top img {
+  width: 100%; /* 圖片寬度占滿容器 */
+  height: 100%; /* 圖片高度占滿容器 */
+  object-fit: cover; /* 確保圖片不變形 */
+}
+
+.intro-content2 {
+    display: flex; /* 使用 Flexbox 排列內部內容 */
+    flex-direction: column; /* 讓內容從上到下排列 */
+    justify-content: center; /* 垂直置中 */
+    align-items: center; /* 水平置中 */
+    padding: 5px; /* 內邊距 */
+    flex: 1; /* 填滿剩餘空間 */
+    height: 100%; /* 高度占滿父容器 */
+    box-sizing: border-box; /* 包括內邊距和邊框 */
+    left: 0;
+  
+  }
+  
+  #intro-content1 h2,
+  #intro-content1 p,
+  #intro-content1 button {
+    text-align: center; /* 文字水平置中 */
+  }
+
