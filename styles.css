@@ -808,12 +808,29 @@ body {
   left: 20px;
   top: 50%;
   transform: translateY(-50%);
-  width: 100px;
+  width: 150px;
+  flex-direction: row;
+  align-items: center;
+  opacity: 0; /* 初始隱藏 */
+  transition: opacity 0.5s ease; /* 平滑過渡效果 */
+}
+
+.sidebar.visible {
+  opacity: 1; /* 滑動到目標區域後顯示 */
+}
+
+.progress-bar {
+  width: 3px; /* 進度條的寬度 */
+  height: 100%; /* 進度條的高度 */
+  background-color: black;
+  margin-left: 50%; /* 與文字列表保持間距 */
+  transition: height 0.3s;
 }
 
 .product-list {
   list-style: none;
   padding: 0;
+  margin: 0;
   text-align: left;
 }
 

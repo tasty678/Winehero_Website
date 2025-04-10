@@ -211,3 +211,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   revealSections();
 });
+
+document.addEventListener("scroll", function () {
+  const sidebar = document.querySelector(".sidebar");
+  const introContainer = document.querySelector(".hb-introduction-container");
+
+  // 獲取 hb-introduction-container 的位置
+  const introTop = introContainer.getBoundingClientRect().top;
+  const introBottom = introContainer.getBoundingClientRect().bottom;
+
+  // 當 hb-introduction-container 出現在視窗內時顯示 sidebar
+  if (introTop <= window.innerHeight && introBottom >= 0) {
+    sidebar.classList.add("visible");
+  } else {
+    sidebar.classList.remove("visible");
+  }
+});
+
