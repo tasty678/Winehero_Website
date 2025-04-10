@@ -170,3 +170,44 @@ document.addEventListener("DOMContentLoaded", () => {
   // 觀察 h2 元素
   observer.observe(productsHeading);
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const sections = document.querySelectorAll(".product");
+  const productList = document.querySelectorAll(".product-list li");
+  const progressBar = document.querySelector(".progress-bar");
+
+  function updateActiveSection() {
+      let index = 0;
+      sections.forEach((section, i) => {
+          const rect = section.getBoundingClientRect();
+          if (rect.top <= window.innerHeight * 0.5) {
+              index = i;
+          }
+      });
+
+      // 更新進度條
+      let progress = ((index + 1) / sections.length) * 100;
+      progressBar.style.height = `${progress}%`;
+
+      // 更新左下角產品名稱顏色
+      productList.forEach(li => li.classList.remove("active"));
+      productList[index].classList.add("active");
+  }
+
+  function revealSections() {
+      sections.forEach(section => {
+          const rect = section.getBoundingClientRect();
+          if (rect.top <= window.innerHeight * 0.75) {
+              section.classList.add("visible");
+          }
+      });
+  }
+
+  window.addEventListener("scroll", () => {
+      updateActiveSection();
+      revealSections();
+  });
+
+  revealSections();
+});
