@@ -220,11 +220,13 @@ document.addEventListener("scroll", function () {
   const introTop = introContainer.getBoundingClientRect().top;
   const introBottom = introContainer.getBoundingClientRect().bottom;
 
+  // 設置觸發點為視窗高度的 20%
+  const triggerPoint = window.innerHeight * 0.5;
+
   // 當 hb-introduction-container 出現在視窗內時顯示 sidebar
-  if (introTop <= window.innerHeight && introBottom >= 0) {
+  if (introTop <= window.innerHeight - triggerPoint && introBottom >= 0) {
     sidebar.classList.add("visible");
   } else {
     sidebar.classList.remove("visible");
   }
 });
-

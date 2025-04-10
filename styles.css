@@ -801,7 +801,9 @@ body {
   margin: 20px; /* 移除段落的外邊距 */
 }
 
-
+.hb-introduction-container {
+  padding: 30px;
+}
 /* 側邊導航條 */
 .sidebar {
   position: fixed;
@@ -820,12 +822,14 @@ body {
 }
 
 .progress-bar {
-  width: 3px; /* 進度條的寬度 */
-  height: 100%; /* 進度條的高度 */
+  position: absolute;
+  margin-left: 50%;
+  width: 3px;
+  height: 0;
   background-color: black;
-  margin-left: 50%; /* 與文字列表保持間距 */
   transition: height 0.3s;
 }
+
 
 .product-list {
   list-style: none;
@@ -846,19 +850,11 @@ body {
   font-weight: bold;
 }
 
-/* 進度條 */
-.progress-bar {
-  position: absolute;
-  left: 5px;
-  width: 3px;
-  height: 0;
-  background-color: black;
-  transition: height 0.3s;
-}
+
 
 /* 內容區 */
 .content {
-  margin-left: 150px;
+  margin-left: 10%;
   width: 80%;
 }
 
