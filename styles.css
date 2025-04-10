@@ -804,6 +804,9 @@ body {
 .hb-introduction-container {
   padding: 30px;
 }
+
+
+
 /* 側邊導航條 */
 .sidebar {
   position: fixed;
@@ -815,6 +818,7 @@ body {
   align-items: center;
   opacity: 0; /* 初始隱藏 */
   transition: opacity 0.5s ease; /* 平滑過渡效果 */
+  width: 10%;
 }
 
 .sidebar.visible {
@@ -825,6 +829,12 @@ body {
   position: absolute;
   margin-left: 50%;
   width: 3px;
+  height: 100%;
+  background-color: lightgray;
+}
+
+.progress-bar-fill {
+  width: 100%;
   height: 0;
   background-color: black;
   transition: height 0.3s;
@@ -854,7 +864,7 @@ body {
 
 /* 內容區 */
 .content {
-  margin-left: 10%;
+  margin-left: 12%;
   width: 80%;
 }
 
@@ -868,9 +878,20 @@ body {
   transition: all 0.8s;
 }
 
+.product.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .product img {
   width: 300px;
   height: auto;
+  max-width: 100%;
+}
+
+.text {
+  width: 40%;
+  text-align: center;
 }
 
 .image.left { order: 1; }
@@ -883,4 +904,5 @@ body {
 .product.visible {
   opacity: 1;
   transform: translateY(0);
-}
+  }
+
