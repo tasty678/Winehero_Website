@@ -171,6 +171,23 @@ document.addEventListener("DOMContentLoaded", () => {
   observer.observe(productsHeading);
 });
 
+// 這段程式用於poster button
+document.addEventListener("DOMContentLoaded", () => {
+  const scrollToHistoryButton = document.getElementById("scroll-to-history");
+  const historyContainer = document.getElementById("hb_history");
+
+  scrollToHistoryButton.addEventListener("click", () => {
+    // 平滑滾動到 history-container
+    const navHeight = document.querySelector("nav").offsetHeight; // 獲取 nav 的高度
+    const targetPosition = historyContainer.getBoundingClientRect().top + window.scrollY - navHeight - 30; // 偏移 10px
+
+     // 平滑滾動到目標位置
+     window.scrollTo({
+      top: targetPosition,
+      behavior: "smooth",
+    });
+  });
+});
 
 document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll(".product");

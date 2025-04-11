@@ -629,12 +629,27 @@ body {
     overflow: hidden; /* 確保沒有多餘的滾動條 */
 }
 
+  /* 定義淡入動畫 */
+@keyframes fadeIn {
+  0% {
+    opacity: 0; /* 初始透明度為 0 */
+  }
+  100% {
+    opacity: 1; /* 最終透明度為 1 */
+  }
+}
+
+
   .poster-container img {
     width: 100%;
     height: 100%;
     object-fit: cover; /* 讓圖片覆蓋整個區域，可能會裁切 */
     display: block;
-  }
+    animation: fadeIn 2s ease-in-out; /* 動畫持續 2 秒，使用平滑過渡 */
+    opacity: 0; /* 初始透明度為 0，防止動畫未開始時圖片顯示 */
+    animation-fill-mode: forwards; /* 確保動畫結束後保持最終狀態 */
+}
+  
 
   /* 文字標題 */
   .poster-headings {
@@ -655,6 +670,9 @@ body {
       display: flex;
       flex-direction: column;
       gap: 10px;
+      animation: fadeIn 3s ease-in-out; /* 動畫持續 2 秒，使用平滑過渡 */
+      opacity: 0; /* 初始透明度為 0，防止動畫未開始時圖片顯示 */
+     animation-fill-mode: forwards; /* 確保動畫結束後保持最終狀態 */
   }
 
   /* 內文 */
@@ -681,6 +699,12 @@ body {
       border: none;
       font-size: 0.8rem;
       cursor: pointer;
+  }
+
+  .poster-buttons button:hover {
+      background: rgba(255, 255, 255, 0.5);
+      width: 100%;
+      transition: background 0.3s ease;
   }
 
   /* 小螢幕調整 */
@@ -877,14 +901,41 @@ body {
   background-color: lightgray;
 }
 
+
+/* 內容區域 */
+
+/* 定義淡入淡出動畫 */
+@keyframes fadeInContent {
+  0% {
+    opacity: 0;
+    transform: translateY(50px); /* 初始位置稍微向下 */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* 最終位置回到原位 */
+  }
+}
+
+@keyframes fadeOutContent {
+  0% {
+    opacity: 1;
+    transform: translateY(0); /* 保持原位 */
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-50px); /* 離開時稍微向上 */
+  }
+}
+
 .content {
-  margin-left: 180px;
+  margin-left: 10%;
   width: 80%;
   max-width: 1200px; /* 限制內容區域的最大寬度 */
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 40px;
 }
+
 
 
 /* 單個產品區塊 */
@@ -897,7 +948,18 @@ body {
   max-width: 1200px; /* 限制父容器的最大寬度 */
   margin: 0 auto; /* 讓父容器水平置中 */
   height: auto; /* 高度自適應 */
+  opacity: 0; /* 初始透明度為 0 */
+  transform: translateY(50px); /* 初始位置稍微向下 */
+  transition: opacity 0.8s ease, transform 0.8s ease; /* 平滑過渡效果 */
 }
+
+/* 當進入視窗時 */
+.product.visible {
+  opacity: 1;
+  animation: fadeInContent 0.8s ease forwards; /* 淡入動畫 */
+  animation-fill-mode: forwards; /* 確保動畫結束後保持最終狀態 */
+}
+
 
 /* 圖片樣式 */
 .product img {
@@ -942,3 +1004,30 @@ body {
   margin-left: 10%;
 }
 
+
+/* 響應式設計：螢幕寬度小於 768px 時 */
+@media (max-width: 768px) {
+  .product {
+    flex-direction: column; /* 讓圖片和文字垂直排列 */
+    align-items: center; /* 讓內容置中 */
+    text-align: center; /* 讓文字置中 */
+  }
+
+  .image-left,
+  .image-right {
+    flex: 0 0 80%; /* 圖片寬度占父容器的 100% */
+    max-width: 80%; /* 確保圖片不超過父容器的寬度 */
+    order: 1;
+    margin-left: 30px; /* 移除左邊距 */
+  }
+
+  .text-right,
+  .text-left {
+    flex: 0 0 100%; /* 文字寬度占父容器的 100% */
+    max-width: 100%; /* 確保文字不超過父容器的寬度 */
+    margin-top: 30px; /* 與圖片保持適當距離 */
+    margin-left: 40px;
+    text-align: center; /* 文字置中 */
+    order: 2;
+  }
+}
