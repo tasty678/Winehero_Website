@@ -1107,8 +1107,29 @@ body {
     }
 
     .filter-group { margin-bottom: 15px; }
-    .filter-group-title { font-weight: bold; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
-    .filter-options { display: none; margin-top: 10px; padding-left: 10px; }
+    .filter-group-title { 
+      font-weight: bold; 
+      cursor: pointer; 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+    }
+    .filter-group-title:hover { 
+      background-color: #e0e0e0;
+    }
+
+    .filter-options { 
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease; /* 平滑過渡效果 */
+      margin-top: 10px; 
+      padding-left: 10px; 
+    }
+
+    .filter-options.active {
+      max-height: 500px; /* 設置一個足夠大的高度，確保內容完全展開 */
+    }
+
     .filter-options label { display: block; margin-bottom: 5px; }
     .range-box { margin-top: 10px; }
     .price-display { text-align: center; margin-bottom: 5px; }
@@ -1128,16 +1149,48 @@ body {
       transition: 0.3s; 
       position: relative; 
       overflow: hidden; }
-    .product-card:hover { border: 2px solid #647c97; }
-    .product-image { width: 100%; display: block; margin: auto; transition: 0.3s; }
-    .product-card:hover .product-image { opacity: 0.5; }
-    .view-icon { display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 24px; color: #003366; }
-    .product-card:hover .view-icon { display: block; }
-    .product-info { text-align: left; }
-    .product-info h2 { font-size: 16px; margin: 10px 0 0 0; }
-    .product-info h4 { font-size: 14px; margin: 5px 0; color: #666; }
-    .product-info p { margin: 5px 0; font-size: 13px; color: #444; }
+    .product-card:hover { 
+      border: 2px solid #647c97; 
+    }
+    .product-image { 
+      width: 100%; 
+      display: block; 
+      margin: auto; 
+      transition: 0.3s; 
+    }
+    .product-card:hover .product-image { 
+      opacity: 0.5; 
+    }
+    .view-icon { 
+      display: none; 
+      position: absolute; 
+      top: 50%; 
+      left: 50%; 
+      transform: translate(-50%, -50%); 
+      font-size: 24px; color: #003366; 
+    }
+    .product-card:hover .view-icon { 
+      display: block; 
+    }
+    .product-info { 
+      text-align: left; 
+    }
+    .product-info h2 { 
+      font-size: 16px; 
+      margin: 10px 0 0 0; }
+    .product-info h4 { 
+      font-size: 14px; 
+      margin: 5px 0; 
+      color: #666; 
+    }
+    .product-info p { 
+      margin: 5px 0; 
+      font-size: 13px; 
+      color: #444; 
+    }
 
-    .pagination { text-align: center; margin-top: 30px; }
+    .pagination { 
+      text-align: center; 
+      margin: 80px; }
     .pagination span, .pagination a { margin: 0 5px; cursor: pointer; color: #003366; }
     .pagination a:hover { text-decoration: underline; }

@@ -266,3 +266,34 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const filterGroups = document.querySelectorAll(".filter-group");
+
+  filterGroups.forEach((group) => {
+    const title = group.querySelector(".filter-group-title");
+    const options = group.querySelector(".filter-options");
+
+    // 點擊 filter-group-title 時切換 filter-options 的顯示狀態
+    title.addEventListener("click", () => {
+      const isActive = options.classList.contains("active");
+
+      // 關閉所有其他的 filter-options
+      filterGroups.forEach((otherGroup) => {
+        const otherOptions = otherGroup.querySelector(".filter-options");
+        if (otherOptions !== options) {
+          otherOptions.classList.remove("active");
+          otherOptions.style.maxHeight = null; // 重置高度
+        }
+      });
+
+      // 切換當前的 filter-options
+      if (isActive) {
+        options.classList.remove("active");
+        options.style.maxHeight = null; // 收起
+      } else {
+        options.classList.add("active");
+        options.style.maxHeight = options.scrollHeight + "px"; // 展開
+      }
+    });
+  });
+});
