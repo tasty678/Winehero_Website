@@ -247,3 +247,17 @@ document.addEventListener("scroll", function () {
     sidebar.classList.remove("visible");
   }
 });
+
+
+document.querySelectorAll('.filter-group-title').forEach(title => {
+  title.addEventListener('click', () => {
+    const options = title.nextElementSibling;
+    options.style.display = options.style.display === 'block' ? 'none' : 'block';
+  });
+});
+
+const sortButton = document.querySelector('.sort-button');
+const sortOptions = document.querySelector('.sort-options');
+sortButton.addEventListener('click', () => {
+  sortOptions.style.display = sortOptions.style.display === 'block' ? 'none' : 'block';
+});

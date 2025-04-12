@@ -16,11 +16,13 @@ collections:
     slug: "{{slug}}"
     fields:
       - { label: "名稱", name: "name", widget: "string" }
-      - { label: "品牌", name: "brand", widget: "string" }
+      - { label: "英文名稱", name: "englisht_name", widget: "string" }
+      - { label: "品牌", name: "brand", widget: "select", options: ["HB", "軒尼詩", "蘇格登","約翰走路","穆赫","皇家禮炮","馬爹利","歐肯特軒","亞柏樂","仕高利達"] }
       - { label: "描述", name: "description", widget: "text" }
       - { label: "價格", name: "price", widget: "number" }
       - { label: "圖片", name: "image", widget: "image" }
       - { label: "類別", name: "category", widget: "select", options: ["紅酒", "白酒", "香檳","啤酒","威士忌","白蘭地","VSOP"] }
+      - { label: "威士忌類別", name: "whiskey_type", widget: "select", options: ["單一麥芽威士忌", "調和威士忌", "波本威士忌","其他"] }
       - { label: "酒精濃度", name: "alcohol_content", widget: "number" }
       - { label: "產地", name: "origin", widget: "string" }
       
