@@ -610,11 +610,13 @@ body {
     text-align: center;
     z-index: 1000; /* 確保它顯示在最上層 */
     padding: 10px 0;
-    height: 70px;
+    height: 60px;
   }
   
   .age-warning-banner {
-    width: 100%; /* 圖片寬度自適應 */
+    align-items: center;
+    justify-content: center;
+    width: 70%; /* 圖片寬度自適應 */
     height: auto; /* 保持圖片比例 */
   }
 
@@ -1079,25 +1081,42 @@ body {
     cursor: pointer;
     border: none;
     background: none;
-    font: 1em sans-serif;
+    font: 1.1em sans-serif;
     color: rgb(48, 54, 57);
     
   }
-  .sort-options { 
-    display: none; /* 初始隱藏 */
-    position: absolute; /* 絕對定位，讓它相對於父容器定位 */
-    top: 100%; /* 放置在按鈕的下方 */
+  
+  .sort-options {
+    max-height: 0; /* 初始高度為 0 */
+    overflow: hidden; /* 隱藏超出內容 */
+    transition: max-height 0.3s ease; /* 平滑過渡效果 */
+    position: absolute; /* 絕對定位 */
+    top: 130%; /* 放置在按鈕的下方 */
     left: 0; /* 與按鈕左對齊 */
     background-color: white; /* 背景色 */
-    border: 1px solid #ccc; /* 邊框 */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 添加陰影 */
     z-index: 1000; /* 確保在最上層 */
-    width: max-content; /* 根據內容調整寬度 */
-    padding: 10px; /* 添加內邊距 */
+    width: 100%; /* 根據內容調整寬度 */
+    padding: 0 20px; /* 添加內邊距 */
+    
   }
 
-  .sort-options.active {
-    display: block; /* 顯示選項 */
+  .sort-options-content {
+    padding: 30px 10px; /* 添加上下和左右的內邊距 */
+  }
+  
+  .sort-options div {
+    color: rgb(105, 126, 138);
+    margin-bottom: 15px; /* 增加每個選項之間的垂直間距 */
+  }
+  
+  .sort-options div:last-child {
+    margin-bottom: 0; /* 移除最後一個選項的下邊距 */
+  }
+  
+  .sort-options div:hover {
+    color: rgb(37, 52, 62);
+    cursor: pointer; /* 鼠標懸停時顯示手型光標 */
   }
 
     .filter-box-container { 
@@ -1158,6 +1177,7 @@ body {
     }
     .range-box { 
       margin-top: 10px; 
+      width: 100%;
     }
     .price-display { 
       text-align: center; 
@@ -1181,6 +1201,7 @@ body {
       transition: 0.3s; 
       position: relative; 
       overflow: hidden; 
+      max-height: 400px; /* 限制最大高度 */
     }
     .product-card:hover { 
       border: 2px solid #647c97; 
@@ -1193,6 +1214,7 @@ body {
     }
     .product-card:hover .product-image { 
       opacity: 0.5; 
+      cursor: pointer;
     }
     .view-icon { 
       display: none; 
@@ -1226,5 +1248,11 @@ body {
     .pagination { 
       text-align: center; 
       margin: 80px; }
-    .pagination span, .pagination a { margin: 0 5px; cursor: pointer; color: #003366; }
-    .pagination a:hover { text-decoration: underline; }
+    .pagination span, .pagination a { 
+      margin: 0 5px; 
+      cursor: pointer; 
+      color: #405662; }
+
+    .pagination a:hover { 
+      text-decoration: underline; 
+    }

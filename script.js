@@ -265,17 +265,23 @@ document.addEventListener("DOMContentLoaded", () => {
   // 點擊 sort-button 時切換 sort-options 的顯示狀態
   sortButton.addEventListener("click", (event) => {
     event.stopPropagation(); // 防止點擊事件冒泡
-    sortOptions.classList.toggle("active"); // 切換 active 類名
+
+    if (sortOptions.style.maxHeight) {
+      // 如果已展開，則收回
+      sortOptions.style.maxHeight = null;
+    } else {
+      // 如果是收起狀態，則展開
+      sortOptions.style.maxHeight = sortOptions.scrollHeight + "px";
+    }
   });
 
   // 點擊頁面其他地方時隱藏 sort-options
   document.addEventListener("click", (event) => {
-    if (!sortOptions.contains(event.target)) {
-      sortOptions.classList.remove("active"); // 移除 active 類名
+    if (!sortOptions.contains(event.target) && !sortButton.contains(event.target)) {
+      sortOptions.style.maxHeight = null; // 收回
     }
   });
 });
-
 // 這段程式用於產品區塊的篩選功能
 document.addEventListener("DOMContentLoaded", () => {
   const filterGroups = document.querySelectorAll(".filter-group");
