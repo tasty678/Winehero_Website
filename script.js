@@ -248,16 +248,21 @@ document.addEventListener("scroll", function () {
   }
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const sortButton = document.querySelector(".sort-button"); // 選取排序按鈕
+  const sortOptions = document.querySelector(".sort-options"); // 選取排序選項
 
-document.querySelectorAll('.filter-group-title').forEach(title => {
-  title.addEventListener('click', () => {
-    const options = title.nextElementSibling;
-    options.style.display = options.style.display === 'block' ? 'none' : 'block';
+  // 點擊 sort-button 時切換 sort-options 的顯示狀態
+  sortButton.addEventListener("click", (event) => {
+    event.stopPropagation(); // 防止點擊事件冒泡
+    sortOptions.classList.toggle("active"); // 切換 active 類名
+  });
+
+  // 點擊頁面其他地方時隱藏 sort-options
+  document.addEventListener("click", (event) => {
+    if (!sortOptions.contains(event.target)) {
+      sortOptions.classList.remove("active"); // 移除 active 類名
+    }
   });
 });
 
-const sortButton = document.querySelector('.sort-button');
-const sortOptions = document.querySelector('.sort-options');
-sortButton.addEventListener('click', () => {
-  sortOptions.style.display = sortOptions.style.display === 'block' ? 'none' : 'block';
-});

@@ -1074,9 +1074,22 @@ body {
   .sort-button { 
     cursor: pointer;
   }
-    .sort-options { position: absolute; top: 100%; right: 0; background: white; border: 1px solid #ccc; display: none; z-index: 10; }
-    .sort-options div { padding: 5px 10px; cursor: pointer; }
-    .sort-options div:hover { background: #eee; }
+  .sort-options { 
+    display: none; /* 初始隱藏 */
+    position: absolute; /* 絕對定位，讓它相對於父容器定位 */
+    top: 100%; /* 放置在按鈕的下方 */
+    left: 0; /* 與按鈕左對齊 */
+    background-color: white; /* 背景色 */
+    border: 1px solid #ccc; /* 邊框 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 添加陰影 */
+    z-index: 1000; /* 確保在最上層 */
+    width: max-content; /* 根據內容調整寬度 */
+    padding: 10px; /* 添加內邊距 */
+  }
+
+  .sort-options.active {
+    display: block; /* 顯示選項 */
+  }
 
     .filter-box-container { 
       display: flex; 
