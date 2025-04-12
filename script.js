@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-
+// 這段程式用於 quote-container 內的動畫
 document.addEventListener("DOMContentLoaded", () => {
   const quoteContainer = document.querySelector(".quote-container");
   const leftQuote = document.querySelector(".left-quote");
@@ -116,6 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
   observer.observe(quoteContainer);
 });
 
+// 這段程式用於 news-container 內的圖片和 h2 標題
 document.addEventListener("DOMContentLoaded", () => {
   const newsSection = document.querySelector(".news-container");
   const newsHeading = document.querySelector(".news-text-container h2");
@@ -189,6 +190,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// 這段程式用於產品區塊的進度條
 document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll(".product");
   const productList = document.querySelectorAll(".product-list li");
@@ -238,16 +240,24 @@ document.addEventListener("scroll", function () {
   const introBottom = introContainer.getBoundingClientRect().bottom;
 
   // 設置觸發點為視窗高度的 20%
-  const triggerPoint = window.innerHeight * 0.5;
+  const triggerPoint = window.innerHeight * 0.7;
+
+  // 獲取頁面底部的距離
+  const pageBottomTrigger = document.documentElement.scrollHeight - window.innerHeight * 1.4;
 
   // 當 hb-introduction-container 出現在視窗內時顯示 sidebar
-  if (introTop <= window.innerHeight - triggerPoint && introBottom >= 0) {
+  if (
+    introTop <= window.innerHeight - triggerPoint &&
+    introBottom >= 0 &&
+    window.scrollY < pageBottomTrigger
+  ) {
     sidebar.classList.add("visible");
   } else {
     sidebar.classList.remove("visible");
   }
 });
 
+// 這段程式用於產品區塊的排序功能
 document.addEventListener("DOMContentLoaded", () => {
   const sortButton = document.querySelector(".sort-button"); // 選取排序按鈕
   const sortOptions = document.querySelector(".sort-options"); // 選取排序選項
@@ -266,6 +276,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// 這段程式用於產品區塊的篩選功能
 document.addEventListener("DOMContentLoaded", () => {
   const filterGroups = document.querySelectorAll(".filter-group");
 
