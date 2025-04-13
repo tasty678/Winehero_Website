@@ -26,7 +26,7 @@ collections:
       - { label: "酒精濃度", name: "alcohol_content", widget: "number" }
       - { label: "產地", name: "origin", widget: "select", options: ["蘇格蘭", "美國", "法國","日本","英國","台灣","加拿大","其他"] }
       - { label: "年份", name: "year", widget: "number" }
-      - { label: "容量", name: "capacity", widget: "number" }
+      - { label: "容量 ml", name: "capacity", widget: "number" }
       - { label: "酒莊", name: "winery", widget: "string" }
       - { label: "加入日期", name: "created_at", widget: "datetime" }
       
