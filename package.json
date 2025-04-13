@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/tasty678/Winehero_Website/issues"
   },
-  "homepage": "https://github.com/tasty678/Winehero_Website#readme"
+  "homepage": "https://github.com/tasty678/Winehero_Website#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
 }

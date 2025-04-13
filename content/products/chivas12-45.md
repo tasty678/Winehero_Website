@@ -16,4 +16,5 @@ origin: 蘇格蘭
 year: 12
 capacity: 4500
 created_at: 2025-04-13T04:13:00.000Z
+layout: layout.njk
 ---

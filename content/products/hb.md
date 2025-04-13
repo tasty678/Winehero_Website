@@ -20,4 +20,5 @@ origin: 英國
 year: 0
 capacity: 1000
 created_at: 2025-04-13T03:55:00.000Z
+layout: layout.njk
 ---
