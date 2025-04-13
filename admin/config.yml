@@ -13,8 +13,9 @@ collections:
     label: "商品"
     folder: "content/products"
     create: true
-    slug: "{{slug}}"
+    slug: "{{fields.slug}}"
     fields:
+      - { label: "檔名path", name: "slug", widget: "string", required: true }
       - { label: "名稱", name: "name", widget: "string" }
       - { label: "英文名稱", name: "englisht_name", widget: "string" }
       - { label: "品牌", name: "brand", widget: "select", options: ["HB", "軒尼詩", "蘇格登","約翰走路","穆赫","皇家禮炮","馬爹利","歐肯特軒","亞柏樂","仕高利達"] }
@@ -23,11 +24,10 @@ collections:
       - { label: "圖片", name: "image", widget: "image" }
       - { label: "類別", name: "category", widget: "select", options: ["威士忌","啤酒","高粱","葡萄酒","伏特加","朗姆酒","琴酒","龍舌蘭","白蘭地","其他"] }
       - { label: "威士忌類別", name: "whiskey_type", widget: "select", options: ["單一麥芽威士忌", "調和威士忌", "波本威士忌","其他"] }
-      - { label: "酒精濃度", name: "alcohol_content", widget: "number" }
+      - { label: "酒精濃度 %", name: "alcohol_content", widget: "number" }
       - { label: "產地", name: "origin", widget: "select", options: ["蘇格蘭", "美國", "法國","日本","英國","台灣","加拿大","其他"] }
       - { label: "年份", name: "year", widget: "number" }
       - { label: "容量 ml", name: "capacity", widget: "number" }
-      - { label: "酒莊", name: "winery", widget: "string" }
       - { label: "加入日期", name: "created_at", widget: "datetime" }
       
   - name: "news"  # 這是你的文章集合名稱，可以自定義
