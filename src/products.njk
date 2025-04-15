@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品列表</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    
+</head>
+<body>
+    <header>
+      <div class="logo-container">
+        <a href="index.html">
+          <img src="static/images/uploads/logo.png" alt="Logo" class="logo" />
+        </a>
+      </div>
+        <nav>
+          <ul class="menu">
+            <li><a href="index.html">首頁</a></li>
+            <li><a href="hb_intro.html">HB 介紹</a></li>
+            <li><a href="hb_location.html">HB 通路</a></li>
+            <li class="dropdown">
+              <a href="#">商品</a>
+              <ul class="dropdown-menu">
+                <li><a href="products.html?category=whiskey">威士忌</a></li>
+                <li><a href="products.html?category=beer">啤酒</a></li>
+                <li><a href="products.html?category=sorghum">高粱</a></li>
+                <li><a href="products.html?category=wine">葡萄酒</a></li>
+                <li><a href="products.html?category=vodka">伏特加</a></li>
+                <li><a href="products.html?category=rum">朗姆酒</a></li>
+                <li><a href="products.html?category=gin">琴酒</a></li>
+                <li><a href="products.html?category=tequila">龍舌蘭</a></li>
+                <li><a href="products.html?category=brandy">白蘭地</a></li>
+                <li><a href="products.html?category=champagne">香檳</a></li>
+                <li><a href="products.html?category=liqueur">利口酒</a></li>
+                <li><a href="products.html?category=blanc">白酒</a></li>
+  
+              </ul>
+            </li>
+            <li><a href="news.html">最新消息</a></li>
+            <li><a href="contact.html">聯絡我們</a></li>
+          </ul>
+        </nav>
+    </header>
+      <div class="banner">
+        <h1 style="color: rgba(75, 89, 99, 0.939);">商品列表</h1>
+      </div>  
+      <div class="breadcrumb-container">
+        <div class="breadcrumb">
+          商品列表 > <span>威士忌</span> > <span>皇家禮炮</span>
+        </div>
+
+        <div class="sort-box-container">
+          <div class="sort-box">
+            <button class="sort-button">排序方式 Sort by ▾</button>
+            <div class="sort-options">
+              <div class="sort-options-content">
+                <div>價格由低到高</div>
+                <div>價格由高到低</div>
+                <div>最新產品 ↑</div>
+                <div>最新產品 ↓</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        <div class="filter-box-container">
+          <div class="filter-box">
+            <div class="filter-group">
+              <div class="filter-group-title">產品類別<br>Category ▾</div>
+              <div class="filter-options">
+                <label><input type="checkbox" /> 威士忌</label>
+                <label><input type="checkbox" /> 啤酒</label>
+                <label><input type="checkbox" /> 高粱</label>
+                <label><input type="checkbox" /> 葡萄酒</label>
+                <label><input type="checkbox" /> 伏特加</label>
+                <label><input type="checkbox" /> 朗姆酒</label>
+                <label><input type="checkbox" /> 琴酒</label>
+                <label><input type="checkbox" /> 龍舌蘭</label>
+                <label><input type="checkbox" /> 白蘭地</label>
+                <label><input type="checkbox" /> 香檳</label>
+                <label><input type="checkbox" /> 利口酒</label>
+                
+              </div>
+            </div>
+            <div class="filter-group">
+              <div class="filter-group-title">品牌<br>Brand ▾</div>
+              <div class="filter-options">
+                <label><input type="checkbox" /> HB</label>
+                <label><input type="checkbox" /> 軒尼詩</label>
+                <label><input type="checkbox" /> 蘇格登</label>
+                <label><input type="checkbox" /> 約翰走路</label>
+                <label><input type="checkbox" /> 穆赫</label>
+                <label><input type="checkbox" /> 皇家禮炮</label>
+                <label><input type="checkbox" /> 馬爹利</label>
+                <label><input type="checkbox" /> 歐肯特軒</label>
+                <label><input type="checkbox" /> 亞柏樂</label>
+                <label><input type="checkbox" /> 仕高利達</label>
+              </div>
+            </div>
+            <div class="filter-group">
+              <div class="filter-group-title">酒精濃度<br>Alc / Vol ▾</div>
+              <div class="filter-options">
+                <label><input type="checkbox" /> 10% 以下</label>
+                <label><input type="checkbox" /> 10% - 19%</label>
+                <label><input type="checkbox" /> 20% - 29%</label>
+                <label><input type="checkbox" /> 30% - 40%</label>
+                <label><input type="checkbox" /> 40% 以上</label>
+              </div>
+            </div>
+            <div class="filter-group">
+              <div class="filter-group-title">產地<br>Origin ▾</div>
+              <div class="filter-options">
+                <label><input type="checkbox" /> 蘇格蘭</label>
+                <label><input type="checkbox" /> 美國</label>
+                <label><input type="checkbox" /> 法國</label>
+                <label><input type="checkbox" /> 日本</label>
+                <label><input type="checkbox" /> 英國</label>
+                <label><input type="checkbox" /> 台灣</label>
+                <label><input type="checkbox" /> 加拿大</label>
+                <label><input type="checkbox" /> 其他</label>
+              </div>
+            </div>
+            <div class="filter-group">
+              <div class="filter-group-title">價格<br>Price ▾</div>
+              <div class="filter-options">
+                <div class="range-box">
+                  <div class="price-display">$0 - $10,000</div>
+                  <input type="range" min="0" max="10000" value="1000" style="width: 100%;">
+                  <input type="range" min="0" max="10000" value="8000" style="width: 100%;">
+                </div>
+                <label class="over-10k"><input type="checkbox" /> 超過一萬商品</label>
+              </div>
+            </div>
+          </div>
+      
+          <div class="product-list">
+            <!-- 範例商品卡片 -->
+            <div class="product-card">
+              <img src="static/images/uploads/hb.jpg" alt="product" class="product-image">
+              <div class="view-icon">🔍</div>
+              <div class="productpage-info">
+                <h2>皇家禮炮 21年</h2>
+                <h4>Royal Salute 21</h4>
+                <p>經典藍瓷瓶，尊貴威士忌代表。</p>
+                <p>$3,800</p>
+              </div>
+            </div>
+            <div class="product-card">
+              <img src="static/images/uploads/hbsherry.jpg" alt="product" class="product-image">
+              <div class="view-icon">🔍</div>
+              <div class="productpage-info">
+                <h2>皇家禮炮 21年</h2>
+                <h4>Royal Salute 21</h4>
+                <p>經典藍瓷瓶，尊貴威士忌代表。</p>
+                <p>$3,800</p>
+              </div>
+            </div>
+            <div class="product-card">
+              <img src="static/images/uploads/hb12.jpg" alt="product" class="product-image">
+              <div class="view-icon">🔍</div>
+              <div class="productpage-info">
+                <h2>皇家禮炮 21年</h2>
+                <h4>Royal Salute 21</h4>
+                <p>經典藍瓷瓶，尊貴威士忌代表。</p>
+                <p>$3,800</p>
+              </div>
+            </div>
+            <div class="product-card">
+              <img src="static/images/uploads/hbbatchstrength.jpg" alt="product" class="product-image">
+              <div class="view-icon">🔍</div>
+              <div class="productpage-info">
+                <h2>皇家禮炮 21年</h2>
+                <h4>Royal Salute 21</h4>
+                <p>經典藍瓷瓶，尊貴威士忌代表。</p>
+                <p>$3,800</p>
+              </div>
+            </div>
+            <div class="product-card">
+              <img src="static/images/uploads/hbhighland.jpg" alt="product" class="product-image">
+              <div class="view-icon">🔍</div>
+              <div class="productpage-info">
+                <h2>皇家禮炮 21年</h2>
+                <h4>Royal Salute 21</h4>
+                <p>經典藍瓷瓶，尊貴威士忌代表。</p>
+                <p>$3,800</p>
+              </div>
+            </div>
+            <div class="product-card">
+              <img src="https://via.placeholder.com/200x200" alt="product" class="product-image">
+              <div class="view-icon">🔍</div>
+              <div class="productpage-info">
+                <h2>皇家禮炮 21年</h2>
+                <h4>Royal Salute 21</h4>
+                <p>經典藍瓷瓶，尊貴威士忌代表。</p>
+                <p>$3,800</p>
+              </div>
+            </div>
+            <div class="product-card">
+              <img src="https://via.placeholder.com/200x200" alt="product" class="product-image">
+              <div class="view-icon">🔍</div>
+              <div class="productpage-info">
+                <h2>皇家禮炮 21年</h2>
+                <h4>Royal Salute 21</h4>
+                <p>經典藍瓷瓶，尊貴威士忌代表。</p>
+                <p>$3,800</p>
+              </div>
+            </div>
+            <div class="product-card">
+              <img src="https://via.placeholder.com/200x200" alt="product" class="product-image">
+              <div class="view-icon">🔍</div>
+              <div class="productpage-info">
+                <h2>皇家禮炮 21年</h2>
+                <h4>Royal Salute 21</h4>
+                <p>經典藍瓷瓶，尊貴威士忌代表。</p>
+                <p>$3,800</p>
+              </div>
+            </div>
+            <div class="product-card">
+              <img src="https://via.placeholder.com/200x200" alt="product" class="product-image">
+              <div class="view-icon">🔍</div>
+              <div class="productpage-info">
+                <h2>皇家禮炮 21年</h2>
+                <h4>Royal Salute 21</h4>
+                <p>經典藍瓷瓶，尊貴威士忌代表。</p>
+                <p>$3,800</p>
+              </div>
+            </div>
+            <div class="product-card">
+              <img src="https://via.placeholder.com/200x200" alt="product" class="product-image">
+              <div class="view-icon">🔍</div>
+              <div class="productpage-info">
+                <h2>皇家禮炮 21年</h2>
+                <h4>Royal Salute 21</h4>
+                <p>經典藍瓷瓶，尊貴威士忌代表。</p>
+                <p>$3,800</p>
+              </div>
+            </div>
+            <div class="product-card">
+              <img src="https://via.placeholder.com/200x200" alt="product" class="product-image">
+              <div class="view-icon">🔍</div>
+              <div class="productpage-info">
+                <h2>皇家禮炮 21年</h2>
+                <h4>Royal Salute 21</h4>
+                <p>經典藍瓷瓶，尊貴威士忌代表。</p>
+                <p>$3,800</p>
+              </div>
+            </div>
+            <div class="product-card">
+              <img src="https://via.placeholder.com/200x200" alt="product" class="product-image">
+              <div class="view-icon">🔍</div>
+              <div class="productpage-info">
+                <h2>皇家禮炮 21年</h2>
+                <h4>Royal Salute 21</h4>
+                <p>經典藍瓷瓶，尊貴威士忌代表。</p>
+                <p>$3,800</p>
+              </div>
+            </div>
+            <div class="product-card">
+              <img src="https://via.placeholder.com/200x200" alt="product" class="product-image">
+              <div class="view-icon">🔍</div>
+              <div class="productpage-info">
+                <h2>皇家禮炮 21年</h2>
+                <h4>Royal Salute 21</h4>
+                <p>經典藍瓷瓶，尊貴威士忌代表。</p>
+                <p>$3,800</p>
+              </div>
+            </div>
+            <div class="product-card">
+              <img src="https://via.placeholder.com/200x200" alt="product" class="product-image">
+              <div class="view-icon">🔍</div>
+              <div class="productpage-info">
+                <h2>皇家禮炮 21年</h2>
+                <h4>Royal Salute 21</h4>
+                <p>經典藍瓷瓶，尊貴威士忌代表。</p>
+                <p>$3,800</p>
+              </div>
+            </div>
+            <div class="product-card">
+              <img src="https://via.placeholder.com/200x200" alt="product" class="product-image">
+              <div class="view-icon">🔍</div>
+              <div class="productpage-info">
+                <h2>皇家禮炮 21年</h2>
+                <h4>Royal Salute 21</h4>
+                <p>經典藍瓷瓶，尊貴威士忌代表。</p>
+                <p>$3,800</p>
+              </div>
+            </div>
+            <div class="product-card">
+              <img src="https://via.placeholder.com/200x200" alt="product" class="product-image">
+              <div class="view-icon">🔍</div>
+              <div class="productpage-info">
+                <h2>皇家禮炮 21年</h2>
+                <h4>Royal Salute 21</h4>
+                <p>經典藍瓷瓶，尊貴威士忌代表。</p>
+                <p>$3,800</p>
+              </div>
+            </div>
+            <div class="product-card">
+              <img src="https://via.placeholder.com/200x200" alt="product" class="product-image">
+              <div class="view-icon">🔍</div>
+              <div class="productpage-info">
+                <h2>皇家禮炮 21年</h2>
+                <h4>Royal Salute 21</h4>
+                <p>經典藍瓷瓶，尊貴威士忌代表。</p>
+                <p>$3,800</p>
+              </div>
+            </div>
+            <div class="product-card">
+              <img src="https://via.placeholder.com/200x200" alt="product" class="product-image">
+              <div class="view-icon">🔍</div>
+              <div class="productpage-info">
+                <h2>皇家禮炮 21年</h2>
+                <h4>Royal Salute 21</h4>
+                <p>經典藍瓷瓶，尊貴威士忌代表。</p>
+                <p>$3,800</p>
+              </div>
+            </div>
+            <div class="product-card">
+              <img src="https://via.placeholder.com/200x200" alt="product" class="product-image">
+              <div class="view-icon">🔍</div>
+              <div class="productpage-info">
+                <h2>皇家禮炮 21年</h2>
+                <h4>Royal Salute 21</h4>
+                <p>經典藍瓷瓶，尊貴威士忌代表。</p>
+                <p>$3,800</p>
+              </div>
+            </div>
+            <div class="product-card">
+              <img src="https://via.placeholder.com/200x200" alt="product" class="product-image">
+              <div class="view-icon">🔍</div>
+              <div class="productpage-info">
+                <h2>皇家禮炮 21年</h2>
+                <h4>Royal Salute 21</h4>
+                <p>經典藍瓷瓶，尊貴威士忌代表。</p>
+                <p>$3,800</p>
+              </div>
+            </div>
+            <!-- 可以複製上面這段填滿 20 筆 -->
+          </div>
+        </div>
+      
+        <div class="pagination">
+          <span>1</span>
+          <a>2</a>
+          <a>3</a>
+          <span>...</span>
+          <a>10</a>
+          <a>下一頁</a>
+          <a>最後一頁</a>
+        </div>
+      
+
+
+      
+    
+
+    <footer>
+      <div class="footer-container">
+        <div class="company-info">
+          <p><strong>酒國英豪洋酒公司</strong></p>
+          <hr />
+          <p>地址: 台中市大雅區民生路三段356號 
+            <a href="https://www.google.com/maps?q=台中市大雅區民生路三段356號" target="_blank">
+              <img src="static/images/uploads/google-map-logo.png" alt="Google Map" class="google-map-logo" />
+            </a>
+          </p>
+          <p>電話: 04-25664710</p>
+          <p>週一到週五: 10:00 AM - 3:00 AM</p>
+          <p>週六與週日: 10:00 AM - 10:00 PM</p>
+        </div>
+        <div class="copyright">
+          <p>&copy; 2025 酒國英豪洋酒公司</p>
+         </div> 
+      </div>
+      
+    </footer>
+
+    <div class="age-warning">
+      <img src="static/images/uploads/age-warning-banner.png" alt="警告標語" class="age-warning-banner" />
+    </div>
+
+    
+
+
+
+    <script src="assets/js/script.js"></script>      
+
+</body>
+</html>

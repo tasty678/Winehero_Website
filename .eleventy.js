@@ -3,6 +3,8 @@ module.exports = function (eleventyConfig) {
 
     // Example: Copy static files to the output folder
     eleventyConfig.addPassthroughCopy("static");
+    eleventyConfig.addPassthroughCopy("src/admin");
+    eleventyConfig.addPassthroughCopy("src/assets");
 
     return {
         dir: {
