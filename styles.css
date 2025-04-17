@@ -1276,27 +1276,42 @@ body {
       padding: 20px; /* 上下內邊距 */
       background-color: #e9ecee; /* 項目背景色 */
       border-radius: 5%;
-      justify-content: center;
+      display: flex; /* 使用 Flexbox */
+      flex-direction: column; /* 垂直排列 */
+      align-items: center;
+    }
 
+    .news-item:hover {
+      box-shadow: #3b5868 0px 0px 5px; /* 滑鼠懸停時陰影效果 */
+      transform: scale(1.05); /* 放大效果 */
+      transition: all 0.3s ease; /* 平滑過渡效果 */
+      background-color: #415e6d;
+      color: white;
     }
 
     .news-item img {
       width: 100%; /* 圖片寬度填滿容器 */
-      height: 65%; /* 高度自適應 */
+      height: 60%; 
       object-fit: cover; /* 確保圖片不變形 */
       border-radius: 5%;
-    }
-
-    .news-item img:hover {
-      opacity: 0.3; /* 滑鼠懸停時透明度變為 50% */
-      cursor: pointer; /* 鼠標懸停時顯示手型光標 */
+      
     }
     
+    .news-item h2 {
+      margin-top: 20px;
+      font-size: 1.2rem; /* 調整字體大小 */
+    }
     .link-to-details {
       text-decoration: none; /* 移除下劃線 */
       color: #3b5868; /* 預設顏色 */
       font-size: 0.8rem; /* 調整字體大小 */
       font-weight: bold; /* 加粗字體 */
-      margin-top: 10px; /* 與圖片保持適當距離 */
+      margin-bottom: 20px; /* 與下方內容保持間距 */
+      width: 90%;
+      background-color: white;
+      text-align: center; /* 文字置中 */
+      padding: 10px; /* 上下內邊距 */
+      border-radius: 20px; /* 圓角 */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 陰影效果 */
     }
 
