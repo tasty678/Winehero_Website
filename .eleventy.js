@@ -5,6 +5,11 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("static");
     eleventyConfig.addPassthroughCopy("src/admin");
     eleventyConfig.addPassthroughCopy("src/assets");
+    
+    eleventyConfig.addCollection("news", function(collectionApi) {
+        return collectionApi.getFilteredByGlob("src/content/news/*.md").reverse(); // 依照時間排序最新的在上面
+      });
+      
 
     return {
         dir: {

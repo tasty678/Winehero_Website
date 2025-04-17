@@ -6,13 +6,14 @@ layout: base.njk
 <section class="news-detail">
         <a href="/news/" class="back-to-news">返回最新消息</a>
         <div class="news-title">
-            <h1>最新消息標題</h1>
-            <h3>這是最新消息的詳細內容，這裡可以放一些簡介。</h3>
+            <h1>{{ news.data.title }}</h1>
+            <h3>{{ news.daata.excerpt }}</h3>
         </div>
         <div class="detail-page-photo">
-            <img src="/static/images/uploads/news1.jpg" alt="News Detail" class="news-detail-photo" />
+            <img src="/static{{ news.data.image }}" alt="{{ news.data.title }}" class="news-detail-photo" />
         </div>
         <div class="detail-page-text">  
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non distinctio iste adipisci eveniet debitis. Facilis, deserunt illum veniam labore obcaecati ab fugiat, recusandae iste, nulla distinctio eius harum cumque odio.</p>
+            <p>{{ news.data.content | safe }}</p>
+
         </div>
 </section>   
