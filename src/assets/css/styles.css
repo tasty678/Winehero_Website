@@ -359,7 +359,7 @@ body {
     height: auto; /* 高度自適應 */
   }
   
-  .news-photo {
+  .main-news-photo {
     width: 100%; /* 照片寬度佔滿容器 */
     height: auto; /* 高度自適應 */
     object-fit: cover; /* 確保照片不會變形 */
@@ -428,7 +428,7 @@ body {
       height: auto; /* 高度自適應 */
     }
   
-    .news-photo {
+    .main-news-photo {
       width: 100%; /* 照片寬度佔滿容器 */
       height: auto; /* 高度自適應 */
       object-fit: cover; /* 確保照片不會變形 */
@@ -464,8 +464,8 @@ body {
     animation: grow 0.5s ease-in-out forwards; /* 放大動畫 */
   }
 
-  .news-photo {
-    opacity: 0.1; /* 初始透明度較低 */
+  .main-news-photo {
+    opacity: 0.2; /* 初始透明度較低 */
     transition: opacity 5s ease; /* 平滑過渡效果 */
   }
   
@@ -1256,3 +1256,123 @@ body {
     .pagination a:hover { 
       text-decoration: underline; 
     }
+
+
+    /* 最新消息頁面 */
+    #all-news-container {
+      display: flex; /* 使用 Flexbox 排列內容 */
+      flex-direction: row;
+      flex-wrap: wrap;;
+      align-items: center; /* 置中對齊 */
+      justify-content: center;
+      padding: 10px; /* 上下內邊距 */
+      margin-bottom: 150px; /* 確保內容不會被 footer 遮住 */
+      gap: 15px; /* 增加項目之間的間距 */
+
+    }
+
+    .news-item {
+      width: 350px;
+      height: 500px; /* 固定高度 */
+      padding: 20px; /* 上下內邊距 */
+      background-color: #e9ecee; /* 項目背景色 */
+      border-radius: 5%;
+      display: flex; /* 使用 Flexbox */
+      flex-direction: column; /* 垂直排列 */
+      align-items: center;
+    }
+
+    .news-item:hover {
+      box-shadow: #3b5868 0px 0px 5px; /* 滑鼠懸停時陰影效果 */
+      transform: scale(1.05); /* 放大效果 */
+      transition: all 0.3s ease; /* 平滑過渡效果 */
+      background-color: #415e6d;
+      color: white;
+    }
+
+    .news-item img {
+      width: 100%; /* 圖片寬度填滿容器 */
+      height: 60%; 
+      object-fit: cover; /* 確保圖片不變形 */
+      border-radius: 5%;
+      
+    }
+    
+    .news-item h2 {
+      margin-top: 20px;
+      font-size: 1.2rem; /* 調整字體大小 */
+    }
+    .link-to-details {
+      text-decoration: none; /* 移除下劃線 */
+      color: #3b5868; /* 預設顏色 */
+      font-size: 0.8rem; /* 調整字體大小 */
+      font-weight: bold; /* 加粗字體 */
+      margin-bottom: 20px; /* 與下方內容保持間距 */
+      width: 90%;
+      background-color: white;
+      text-align: center; /* 文字置中 */
+      padding: 10px; /* 上下內邊距 */
+      border-radius: 20px; /* 圓角 */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 陰影效果 */
+    }
+
+
+    /* News Detail Page */
+    .news-detail {
+      display: flex; /* 使用 Flexbox 排列內容 */
+      flex-direction: column; /* 垂直排列 */
+      margin: 5% 15%;
+      
+    }
+    .back-to-news {
+      position: absolute;
+      right: 10%;
+      top: 250px;
+      color: white;
+      background-color: #41515a;
+      text-decoration: none;
+      padding: 10px 30px; /* 上下內邊距 */
+      border-radius: 20px; /* 圓角 */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 陰影效果 */
+      }
+    .back-to-news:hover {
+      background-color: #d0d4d6; /* 滑鼠懸停時顏色變化 */
+      color: #41515a; /* 滑鼠懸停時字體顏色變化 */
+      transition: all 0.3s ease; /* 平滑過渡效果 */
+    }
+
+
+    .news-title h1 {
+      font-size: 2.5rem; /* 調整字體大小 */
+      margin-bottom: 20px; /* 與下方內容保持間距 */
+      color: rgba(75, 89, 99, 0.939); /* 預設顏色 */
+    }
+    
+    .news-title h3 {
+      font-size: 1rem; /* 調整字體大小 */
+      margin: 20px 0 30px 0; /* 與下方內容保持間距 */
+      color: #596368; /* 預設顏色 */
+    }
+
+    .detail-page-photo {
+      width: 100%; /* 圖片寬度填滿容器 */
+      height: 80%;
+      
+    }
+
+    .detail-page-photo img {
+      width: 100%; /* 圖片寬度填滿容器 */
+      height: auto; /* 高度自適應 */
+      object-fit: cover; /* 確保圖片不變形 */
+      border-radius: 5px;
+    }
+
+    .detail-page-text p {
+      font-size: 1rem; /* 調整字體大小 */
+      line-height: 1.6; /* 行高 */
+      color: #4a5257; /* 預設顏色 */
+      margin: 20px 0; /* 與下方內容保持間距 */
+    }
+
+
+

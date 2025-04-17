@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
   const newsSection = document.querySelector(".news-container");
   const newsHeading = document.querySelector(".news-text-container h2");
-  const newsImage = document.querySelector(".news-photo");
+  const newsImage = document.querySelector(".main-news-photo");
 
   // 建立 Intersection Observer
   const observer = new IntersectionObserver(

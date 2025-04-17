@@ -1315,3 +1315,62 @@ body {
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 陰影效果 */
     }
 
+    /* News Detail Page */
+    .news-detail {
+      display: flex; /* 使用 Flexbox 排列內容 */
+      flex-direction: column; /* 垂直排列 */
+      margin: 5% 15%;
+      
+    }
+    .back-to-news {
+      position: absolute;
+      right: 10%;
+      top: 15%;
+      color: white;
+      background-color: #41515a;
+      text-decoration: none;
+      padding: 10px 30px; /* 上下內邊距 */
+      border-radius: 20px; /* 圓角 */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 陰影效果 */
+      }
+    .back-to-news:hover {
+      background-color: #d0d4d6; /* 滑鼠懸停時顏色變化 */
+      color: #41515a; /* 滑鼠懸停時字體顏色變化 */
+      transition: all 0.3s ease; /* 平滑過渡效果 */
+    }
+
+
+    .news-title h1 {
+      font-size: 2.5rem; /* 調整字體大小 */
+      margin-bottom: 20px; /* 與下方內容保持間距 */
+      color: rgba(75, 89, 99, 0.939); /* 預設顏色 */
+    }
+    
+    .news-title h3 {
+      font-size: 1rem; /* 調整字體大小 */
+      margin: 20px 0 30px 0; /* 與下方內容保持間距 */
+      color: #596368; /* 預設顏色 */
+    }
+
+    .detail-page-photo {
+      width: 100%; /* 圖片寬度填滿容器 */
+      height: 80%;
+      
+    }
+
+    .detail-page-photo img {
+      width: 100%; /* 圖片寬度填滿容器 */
+      height: auto; /* 高度自適應 */
+      object-fit: cover; /* 確保圖片不變形 */
+      border-radius: 5px;
+    }
+
+    .detail-page-text p {
+      font-size: 1rem; /* 調整字體大小 */
+      line-height: 1.6; /* 行高 */
+      color: #4a5257; /* 預設顏色 */
+      margin: 20px 0; /* 與下方內容保持間距 */
+    }
+
+
+
