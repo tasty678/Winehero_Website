@@ -13,6 +13,7 @@ layout: base.njk
                 <img src="/static{{ news.data.image }}" alt="{{ news.data.title }}" class="news-photo" />
                 <h2>{{ news.data.title }}</h2>
                 <h3>{{ news.data.excerpt }}</h3>
+                <p>上傳日期: {{ news.data.date | postDate }}</p>
                 <a href="{{ news.url }}" class="link-to-details">閱讀更多 Read More</a>
             </div>
             {% endfor %}

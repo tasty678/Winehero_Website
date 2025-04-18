@@ -1,0 +1,21 @@
+---
+title: 最新消息內容
+layout: base.njk
+---
+
+<section class="news-detail">
+        <a href="/news/" class="back-to-news">返回最新消息</a>
+        <div class="news-title">
+            <h1>{{ title }}</h1>
+            <h3>{{ excerpt }}</h3>
+            <p>上傳日期: {{ date | postDate }}</p>
+            
+        </div>
+        <div class="detail-page-photo">
+            <img src="/static{{ image }}" alt="{{ title }}" class="news-detail-photo" />
+        </div>
+        <div class="detail-page-text">  
+            <p>{{ content | safe }}</p>
+
+        </div>
+</section>   
