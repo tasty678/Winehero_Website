@@ -11,7 +11,7 @@ public_folder: "/images/uploads"       # 圖片在網頁上的公開路徑
 collections:
   - name: "products"
     label: "商品"
-    folder: "content/products"
+    folder: "src/content/products"
     create: true
     slug: "{{fields.slug}}"
     fields:
@@ -32,7 +32,7 @@ collections:
       
   - name: "news"  # 這是你的文章集合名稱，可以自定義
     label: "最新消息"  # 顯示在 CMS 的名稱
-    folder: "content/news"  # 文章存放的資料夾
+    folder: "src/content/news"  # 文章存放的資料夾
     create: true  # 允許在 CMS 中創建新的文章
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"  # 文章的 URL 結構
     fields:
